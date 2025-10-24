@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+ <a href="trangchinh.html">← Quay về trang chính</a>
+  <meta charset="UTF-8" />
+  <title>⏰ Góc Nhắc Nhở</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6f7ff;
+      color: #003366;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      color: #0066cc;
+    }
+    label {
+      display: block;
+      margin: 12px 0 4px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #99ccff;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    button {
+      margin-top: 15px;
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #388e3c;
+    }
+    .reminder-list {
+      margin-top: 30px;
+    }
+    .reminder-item {
+      background-color: #ffffff;
+      border: 1px solid #99ccff;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .reminder-item button.delete-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background-color: #e74c3c;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+    .reminder-item button.delete-btn:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>⏰ Góc Nhắc Nhở</h1>
+
+  <form id="reminder-form">
+    <label for="date">Chọn ngày:</label>
+    <input type="date" id="date" required />
+
+    <label for="time">Chọn giờ:</label>
+    <input type="time" id="time" required />
+
+    <label for="note">Ghi chú lời nhắc:</label>
+    <textarea id="note" placeholder="Nhập ghi chú..." required></textarea>
+
+    <button type="submit">💾 Lưu lời nhắc</button>
+  </form>
+
+  <div class="reminder-list" id="reminder-list">
+    <h2>Danh sách lời nhắc</h2>
+    <!-- Lời nhắc sẽ hiện ở đây -->
+  </div>
+
+  <script>
+   const form = document.getElementById('reminder-form');
+const list = document.getElementById('reminder-list');
+
+// Yêu cầu quyền thông báo
+
+if ('Notification' in window) {
+
+if (Notification.permission === 'default') {
+
+Notification.requestPermission();
+
+}
+
+}
+
+// Load danh sách từ localStorage
+function loadReminders() {
+  const data = JSON.parse(localStorage.getItem('reminders') || '[]');
+  renderReminders(data);
+  checkRemindersNotification(data);
+}
+
+// Lưu danh sách vào localStorage
+function saveReminders(data) {
+  localStorage.setItem('reminders', JSON.stringify(data));
+}
+
+// Hiển thị danh sách lời nhắc
+function renderReminders(reminders) {
+  // Xóa hết phần tử hiện có trừ tiêu đề
+  const existingItems = list.querySelectorAll('.reminder-item');
+  existingItems.forEach(item => item.remove());
+
+  if(reminders.length === 0) {
+    const p = document.createElement('p');
+    p.textContent = "Chưa có lời nhắc nào.";
+    list.appendChild(p);
+    return;
+  }
+
+  reminders.forEach((r, idx) => {
+    const div = document.createElement('div');
+    div.className = 'reminder-item';
+
+    div.innerHTML = `
+      <strong>${r.date} ${r.time}</strong><br/>
+      <span>${r.note}</span>
+      <button class="delete-btn" title="Xóa lời nhắc">X</button>
+    `;
+
+    // Xóa nhắc nhở
+    div.querySelector('button.delete-btn').onclick = () => {
+      reminders.splice(idx, 1);
+      saveReminders(reminders);
+      renderReminders(reminders);
+    };
+
+    list.appendChild(div);
+  });
+}
+
+// Kiểm tra và thông báo nhắc nhở
+function checkRemindersNotification(reminders) {
+  if (Notification.permission !== "granted") {
+    return;
+  }
+
+  const now = new Date();
+  // ... trong hàm function checkRemindersNotification(reminders) { ...
+    // ...
+    // Kiểm tra: Nếu thời gian hiện tại đã ĐẾN hoặc QUA thời gian nhắc
+    if (now >= reminderTime) { 
+      // Hiển thị thông báo
+      new Notification("Lời nhắc", {
+        body: `${r.note} (${r.date} ${r.time})`,
+        icon: "https://cdn-icons-png.flaticon.com/512/2921/2921823.png"
+      });
+
+      // Xoá lời nhắc sau khi thông báo (để không báo lại)
+      reminders.splice(idx, 1);
+      saveReminders(reminders);
+      renderReminders(reminders);
+    }
+// ...
+
+  reminders.forEach((r, idx) => {
+    // Tạo Date object từ ngày giờ nhắc
+    const reminderTime = new Date(`${r.date}T${r.time}:00`);
+
+    // Nếu nhắc trong quá khứ hoặc quá gần (ví dụ cách thời gian hiện tại < 1 phút)
+    if (now >= reminderTime && now - reminderTime < 60000) {
+      // Hiển thị thông báo
+      new Notification("Lời nhắc", {
+        body: `${r.note} (${r.date} ${r.time})`,
+        icon: "https://cdn-icons-png.flaticon.com/512/2921/2921823.png"
+      });
+
+      // Xoá lời nhắc sau khi thông báo (để không báo lại)
+      reminders.splice(idx, 1);
+      saveReminders(reminders);
+      renderReminders(reminders);
+    }
+  });
+}
+
+// Kiểm tra mỗi 30 giây
+setInterval(() => {
+  const reminders = JSON.parse(localStorage.getItem('reminders') || '[]');
+  checkRemindersNotification(reminders);
+}, 30000);
+
+form.onsubmit = function(e) {
+  e.preventDefault();
+
+  const date = form.date.value;
+  const time = form.time.value;
+  const note = form.note.value.trim();
+
+  if(!date || !time || !note) {
+    alert('Vui lòng điền đủ thông tin!');
+    return;
+  }
+
+  let reminders = JSON.parse(localStorage.getItem('reminders') || '[]');
+
+  reminders.push({date, time, note});
+
+  saveReminders(reminders);
+  renderReminders(reminders);
+
+  form.reset();
+};
+
+window.onload = loadReminders;
+
+  </script>
+
+</body>
+</html>
+<a href="trangchinh.html">← Quay về trang chính</a>
+
+

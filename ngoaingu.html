@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<a href="trangchinh.html">← Quay về trang chính</a>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Góc Học Tập Môn Ngoại Ngữ</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+    body {
+        background-color: #f9f5ff;
+    }
+    .header-bg {
+        background-color: #6f42c1;
+        color: white;
+        padding: 20px 0;
+        margin-bottom: 20px;
+    }
+    .content-section {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+    }
+    .lesson-title {
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .lesson-title:hover {
+        background-color: #d6c9f8;
+    }
+    .sidebar .nav-link {
+        color: #333;
+        padding: 5px 10px;
+        font-size: 15px;
+    }
+    .sidebar .nav-link:hover {
+        background-color: #e9ecef;
+        border-radius: 4px;
+    }
+    .speak-btn {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 18px;
+        margin-left: 6px;
+    }
+    .speak-btn:hover {
+        color: #6f42c1;
+    }
+</style>
+<style>
+.speak-btn{background:#6f42c1;color:white;border:none;border-radius:50%;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:0.2s;}
+.speak-btn:hover{transform:scale(1.1);background:#5a32a3;}
+.speak-btn:active{transform:scale(0.9);} 
+.speaking{animation:vibrate 0.3s linear infinite;} 
+@keyframes vibrate{0%,100%{transform:translateX(0);}20%{transform:translateX(-2px);}40%{transform:translateX(2px);}60%{transform:translateX(-2px);}80%{transform:translateX(2px);} }
+</style>
+</head>
+<body>
+<a href="trangchinh.html" class="btn btn-link m-3">← Quay về trang chính</a>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse show border-end" style="min-height: 100vh;">
+            <div class="position-sticky p-3">
+                <h5 class="text-primary">📚 Danh mục</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tienganh10">Tiếng Anh 10</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success fw-bold" href="#tienganh11">Tiếng Anh 11</a>
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#collapseTiengAnh11_b1">1. Tenses (Thì trong tiếng Anh)</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#collapseTiengAnh11_b2">2. Modal Verbs (Động từ khiếm khuyết)</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#collapseTiengAnh11_b3">3. Conditional Sentences (Câu điều kiện)</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#collapseTiengAnh11_test15">🔸 Kiểm tra 15p</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#collapseTiengAnh11_testdk">🔸 Kiểm tra định kỳ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tienganh12">Tiếng Anh 12</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Nội dung chính -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <header class="header-bg text-center">
+                <h1>🌍 Góc Học Tập Môn Ngoại Ngữ 📚</h1>
+                <p class="lead">Kiến thức trọng tâm & bài tập Tiếng Anh khối 10, 11, 12</p>
+            </header>
+
+            <!-- Tabs khối -->
+            <ul class="nav nav-tabs justify-content-center" id="ngoaiNguTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tienganh10-tab" data-bs-toggle="tab" data-bs-target="#tienganh10" type="button" role="tab">Khối 10</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tienganh11-tab" data-bs-toggle="tab" data-bs-target="#tienganh11" type="button" role="tab">Khối 11</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tienganh12-tab" data-bs-toggle="tab" data-bs-target="#tienganh12" type="button" role="tab">Khối 12</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="ngoaiNguTabContent">
+                <!-- KHỐI 10 -->
+                <div class="tab-pane fade" id="tienganh10" role="tabpanel">
+                    <div class="content-section mt-4">
+                        <h2 class="text-primary">🔹 Tiếng Anh Lớp 10 – Theo từng Unit</h2>
+                        <p>Hệ thống hóa kiến thức theo từng bài học.</p>
+
+                        <div class="accordion mt-4" id="tienganh10Accordion">
+                            <!-- Unit 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="unit1Header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#unit1Content">📘 Unit 1: Family Life</button>
+                                </h2>
+                                <div id="unit1Content" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <h5>📖 Từ vựng chính</h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-hover">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th scope="col">Từ vựng</th>
+                                                        <th scope="col">Loại từ</th>
+                                                        <th scope="col">Phiên âm</th>
+                                                        <th scope="col">Nghĩa tiếng Việt</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td>Benefit <button class="speak-btn" data-word="Benefit">🔊</button></td><td>n</td><td>/ˈbenɪfɪt/</td><td>Lợi ích</td></tr>
+                                                    <tr><td>Benefit <button class="speak-btn" data-word="Benefit">🔊</button></td><td>n</td><td>/ˈbenɪfɪt/</td><td>Lợi ích</td></tr>
+<tr><td>Bond <button class="speak-btn" data-word="Bond">🔊</button></td><td>n</td><td>/bɒnd/</td><td>Sự gắn bó, kết nối</td></tr>
+<tr><td>Breadwinner <button class="speak-btn" data-word="Breadwinner">🔊</button></td><td>n</td><td>/ˈbredwɪnə(r)/</td><td>Người trụ cột</td></tr>
+<tr><td>Character <button class="speak-btn" data-word="Character">🔊</button></td><td>n</td><td>/ˈkærəktə(r)/</td><td>Tính cách</td></tr>
+<tr><td>Cheer up <button class="speak-btn" data-word="Cheer up">🔊</button></td><td>v</td><td>/tʃɪə(r) ʌp/</td><td>Cổ vũ, làm vui lên</td></tr>
+<tr><td>Damage <button class="speak-btn" data-word="Damage">🔊</button></td><td>v</td><td>/ˈdæmɪdʒ/</td><td>Phá hỏng</td></tr>
+<tr><td>Gratitude <button class="speak-btn" data-word="Gratitude">🔊</button></td><td>n</td><td>/ˈɡrætɪtjuːd/</td><td>Lòng biết ơn</td></tr>
+<tr><td>Grocery <button class="speak-btn" data-word="Grocery">🔊</button></td><td>n</td><td>/ˈɡrəʊsəri/</td><td>Thực phẩm</td></tr>
+<tr><td>Heavy lifting <button class="speak-btn" data-word="Heavy lifting">🔊</button></td><td>n</td><td>/ˌhevi ˈlɪftɪŋ/</td><td>Mang vác nặng</td></tr>
+<tr><td>Homemaker <button class="speak-btn" data-word="Homemaker">🔊</button></td><td>n</td><td>/ˈhəʊmmeɪkə(r)/</td><td>Người nội trợ</td></tr>
+<tr><td>Laundry <button class="speak-btn" data-word="Laundry">🔊</button></td><td>n</td><td>/ˈlɔːndri/</td><td>Đồ giặt</td></tr>
+<tr><td>Manner <button class="speak-btn" data-word="Manner">🔊</button></td><td>n</td><td>/ˈmænə(r)/</td><td>Tác phong</td></tr>
+<tr><td>Responsibility <button class="speak-btn" data-word="Responsibility">🔊</button></td><td>n</td><td>/rɪˌspɒnsəˈbɪləti/</td><td>Trách nhiệm</td></tr>
+<tr><td>Routine <button class="speak-btn" data-word="Routine">🔊</button></td><td>n</td><td>/ruːˈtiːn/</td><td>Lịch sinh hoạt</td></tr>
+<tr><td>Rubbish <button class="speak-btn" data-word="Rubbish">🔊</button></td><td>n</td><td>/ˈrʌbɪʃ/</td><td>Rác</td></tr>
+<tr><td>Spotlessly <button class="speak-btn" data-word="Spotlessly">🔊</button></td><td>adv</td><td>/ˈspɒtləsli/</td><td>Sạch không tì vết</td></tr>
+<tr><td>Strengthen <button class="speak-btn" data-word="Strengthen">🔊</button></td><td>v</td><td>/ˈstreŋkθn/</td><td>Củng cố</td></tr>
+<tr><td>Support <button class="speak-btn" data-word="Support">🔊</button></td><td>n, v</td><td>/səˈpɔːt/</td><td>Hỗ trợ</td></tr>
+<tr><td>Truthful <button class="speak-btn" data-word="Truthful">🔊</button></td><td>adj</td><td>/ˈtruːθfl/</td><td>Trung thực</td></tr>
+<tr><td>Value <button class="speak-btn" data-word="Value">🔊</button></td><td>n</td><td>/ˈvæljuː/</td><td>Giá trị</td></tr>
+<tr><td>Washing-up <button class="speak-btn" data-word="Washing-up">🔊</button></td><td>n</td><td>/ˌwɒʃɪŋ ˈʌp/</td><td>Rửa chén</td></tr>
+<tr><td>Character <button class="speak-btn" data-word="Character">🔊</button></td><td>n</td><td>/ˈkærəktə(r)/</td><td>Tính cách</td></tr>
+<tr><td>Cheer up <button class="speak-btn" data-word="Cheer up">🔊</button></td><td>v</td><td>/tʃɪə(r) ʌp/</td><td>Cổ vũ, làm cho ai đó vui lên</td></tr>
+<tr><td>Damage <button class="speak-btn" data-word="Damage">🔊</button></td><td>v</td><td>/ˈdæmɪdʒ/</td><td>Phá hỏng, làm hỏng</td></tr>
+<tr><td>Gratitude <button class="speak-btn" data-word="Gratitude">🔊</button></td><td>n</td><td>/ˈɡrætɪtjuːd/</td><td>Sự biết ơn, lòng biết ơn</td></tr>
+<tr><td>Grocery <button class="speak-btn" data-word="Grocery">🔊</button></td><td>n</td><td>/ˈɡrəʊsəri/</td><td>Thực phẩm và tạp hoá</td></tr>
+<tr><td>Heavy lifting <button class="speak-btn" data-word="Heavy lifting">🔊</button></td><td>n</td><td>/ˌhevi ˈlɪftɪŋ/</td><td>Mang vác nặng</td></tr>
+<tr><td>Homemaker <button class="speak-btn" data-word="Homemaker">🔊</button></td><td>n</td><td>/ˈhəʊmmeɪkə(r)/</td><td>Người nội trợ</td></tr>
+<tr><td>Laundry <button class="speak-btn" data-word="Laundry">🔊</button></td><td>n</td><td>/ˈlɔːndri/</td><td>Quần áo, đồ giặt là</td></tr>
+<tr><td>Manner <button class="speak-btn" data-word="Manner">🔊</button></td><td>n</td><td>/ˈmænə(r)/</td><td>Tác phong, cách ứng xử</td></tr>
+<tr><td>Responsibility <button class="speak-btn" data-word="Responsibility">🔊</button></td><td>n</td><td>/rɪˌspɒnsəˈbɪləti/</td><td>Trách nhiệm</td></tr>
+<tr><td>Routine <button class="speak-btn" data-word="Routine">🔊</button></td><td>n</td><td>/ruːˈtiːn/</td><td>Lệ thường, công việc hằng ngày</td></tr>
+<tr><td>Rubbish <button class="speak-btn" data-word="Rubbish">🔊</button></td><td>n</td><td>/ˈrʌbɪʃ/</td><td>Rác rưởi</td></tr>
+<tr><td>Spotlessly <button class="speak-btn" data-word="Spotlessly">🔊</button></td><td>adv</td><td>/ˈspɒtləsli/</td><td>Không tì vết</td></tr>
+<tr><td>Strengthen <button class="speak-btn" data-word="Strengthen">🔊</button></td><td>v</td><td>/ˈstreŋkθn/</td><td>Củng cố, làm mạnh thêm</td></tr>
+<tr><td>Support <button class="speak-btn" data-word="Support">🔊</button></td><td>n, v</td><td>/səˈpɔːt/</td><td>Ủng hộ, hỗ trợ</td></tr>
+<tr><td>Truthful <button class="speak-btn" data-word="Truthful">🔊</button></td><td>adj</td><td>/ˈtruːθfl/</td><td>Trung thực</td></tr>
+<tr><td>Value <button class="speak-btn" data-word="Value">🔊</button></td><td>n</td><td>/ˈvæljuː/</td><td>Giá trị</td></tr>
+<tr><td>Washing-up <button class="speak-btn" data-word="Washing-up">🔊</button></td><td>n</td><td>/ˌwɒʃɪŋ ˈʌp/</td><td>Rửa chén bát</td></tr>
+</tbody>
+                                            </table>
+<h5 class="mt-4">📘 Ví dụ từ vựng Unit 1 (Flashcards)</h5>
+<style>.flip{perspective:1000px}.flip .card{transition:transform .6s;transform-style:preserve-3d;position:relative}.flip .front,.flip .back{backface-visibility:hidden;position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:10px;border-radius:12px}.flip .back{transform:rotateY(180deg)}.flip .card.flipped{transform:rotateY(180deg)}</style>
+<div id="flashcards-unit1" class="row row-cols-1 row-cols-md-3 g-3 mt-2">
+<!-- Flashcards will be added here -->
+<div class="col flip"><div class="card front" onclick="this.parentElement.querySelector('.card').classList.toggle('flipped')"><div><b>Benefit</b> <button class="speak-btn" data-word="Benefit">🔊</button><br>/ˈbenɪfɪt/ (n)</div></div><div class="card back" onclick="this.parentElement.querySelector('.card').classList.toggle('flipped')">Sharing housework brings many benefits to family relationships. <button class="speak-btn" data-word="Sharing housework brings many benefits to family relationships.">🔊</button></div></div>
+<div class="col flip"><div class="card front" onclick="this.parentElement.querySelector('.card').classList.toggle('flipped')"><div><b>Bond</b> <button class="speak-btn" data-word="Bond">🔊</button><br>/bɒnd/ (n)</div></div><div class="card back">Family meals help strengthen the bond between family members. <button class="speak-btn" data-word="Family meals help strengthen the bond between family members.">🔊</button></div></div>
+<div class="col flip"><div class="card front"><div><b>Breadwinner</b> <button class="speak-btn" data-word="Breadwinner">🔊</button><br>/ˈbredwɪnə(r)/ (n)</div></div><div class="card back">My father is the main breadwinner in my family. <button class="speak-btn" data-word="My father is the main breadwinner in my family.">🔊</button></div></div>
+<div class="col flip"><div class="card front"><div><b>Homemaker</b> <button class="speak-btn" data-word="Homemaker">🔊</button><br>/ˈhəʊmmeɪkə(r)/ (n)</div></div><div class="card back">A homemaker takes care of the family and the house. <button class="speak-btn" data-word="A homemaker takes care of the family and the house.">🔊</button></div></div>
+<div class="col flip"><div class="card front"><div><b>Responsibility</b> <button class="speak-btn" data-word="Responsibility">🔊</button><br>/rɪˌspɒnsəˈbɪləti/ (n)</div></div><div class="card back">Children should take responsibility for some housework. <button class="speak-btn" data-word="Children should take responsibility for some housework.">🔊</button></div></div>
+<div class="col flip"><div class="card front"><div><b>Divide</b> <button class="speak-btn" data-word="Divide">🔊</button><br>/dɪˈvaɪd/ (v)</div></div><div class="card back">In my family, we divide household chores equally. <button class="speak-btn" data-word="In my family, we divide household chores equally.">🔊</button></div></div>
+<div class="col flip"><div class="card front"><div><b>Share</b> <button class="speak-btn" data-word="Share">🔊</button><br>/ʃeə(r)/ (v)</div></div><div class="card back">We share housework to reduce pressure on parents. <button class="speak-btn" data-word="We share housework to reduce pressure on parents.">🔊</button></div></div>
+<div class="col flip"><div class="card front"><div><b>Heavy lifting</b> <button class="speak-btn" data-word="Heavy lifting">🔊</button><br>/ˌhevi ˈlɪftɪŋ/ (n)</div></div><div class="card back">My dad usually does the heavy lifting in my family. <button class="speak-btn" data-word="My dad usually does the heavy lifting in my family.">🔊</button></div></div>
+<div class="col flip"><div class="card front"><div><b>Housework</b> <button class="speak-btn" data-word="Housework">🔊</button><br>/ˈhaʊswɜːk/ (n)</div></div><div class="card back">Doing housework together can strengthen family bonds. <button class="speak-btn" data-word="Doing housework together can strengthen family bonds.">🔊</button></div></div>
+<div class="col flip"><div class="card front"><div><b>Chore</b> <button class="speak-btn" data-word="Chore">🔊</button><br>/tʃɔː(r)/ (n)</div></div><div class="card back">Cooking is one of my daily chores. <button class="speak-btn" data-word="Cooking is one of my daily chores.">🔊</button></div></div>
+<div class="col flip"><div class="card front"><div><b>Support</b> <button class="speak-btn" data-word="Support">🔊</button><br>/səˈpɔːt/ (v)</div></div><div class="card back">Family members should support each other in life. <button class="speak-btn" data-word="Family members should support each other in life.">🔊</button></div></div>
+<div class="col flip"><div class="card front"><div><b>Strengthen</b> <button class="speak-btn" data-word="Strengthen">🔊</button><br>/ˈstreŋkθn/ (v)</div></div><div class="card back">Working together can strengthen family relationships. <button class="speak-btn" data-word="Working together can strengthen family relationships.">🔊</button></div></div>
+<div class="col flip"><div class="card front"><div><b>Caring</b> <button class="speak-btn" data-word="Caring">🔊</button><br>/ˈkeərɪŋ/ (adj)</div></div><div class="card back">My mother is a caring woman who always helps others. <button class="speak-btn" data-word="My mother is a caring woman who always helps others.">🔊</button></div></div>
+<div class="col flip"><div class="card front"><div><b>Solution</b> <button class="speak-btn" data-word="Solution">🔊</button><br>/səˈluːʃn/ (n)</div></div><div class="card back">Sharing housework is a good solution to family conflicts. <button class="speak-btn" data-word="Sharing housework is a good solution to family conflicts.">🔊</button></div></div>
+<div class="col flip"><div class="card front"><div><b>Relationship</b> <button class="speak-btn" data-word="Relationship">🔊</button><br>/rɪˈleɪʃnʃɪp/ (n)</div></div><div class="card back">Communication helps build a strong family relationship. <button class="speak-btn" data-word="Communication helps build a strong family relationship.">🔊</button></div></div>
+</div>
+    <div class="text-muted">/ˈbenɪfɪt/ • (n)</div>
+    <hr>
+    <div class="example d-none">Sharing housework brings many benefits to family relationships. <button class="speak-btn" data-word="Sharing housework brings many benefits to family relationships.">🔊</button></div>
+  </div>
+</div>
+</div>
+                                        </div>
+
+                                        <h5 class="mt-5">🎴 Flashcards từ vựng Unit 1</h5>
+                                        <div class="row row-cols-2 row-cols-md-4 g-3 mt-3">
+                                            <div class="col">
+                                                <div class="card flip-card h-100">
+                                                    <div class="flip-card-inner">
+                                                        <div class="flip-card-front d-flex justify-content-center align-items-center p-3">
+                                                            <div>
+                                                                <strong>Benefit</strong> <button class="speak-btn" data-word="Benefit">🔊</button><br>
+                                                                /ˈbenɪfɪt/
+                                                            </div>
+                                                        </div>
+                                                        <div class="flip-card-back d-flex justify-content-center align-items-center p-3">
+                                                            <div>Lợi ích</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- More cards... -->
+
+<h5 class="mt-5">✅ Bài tập ôn từ vựng Unit 1</h5>
+<p>Chọn đáp án đúng:</p>
+<ol>
+<li>"Benefit" means ______.<br>A. problem &nbsp; B. advantage ✅ &nbsp; C. danger &nbsp; D. risk</li>
+<li>A ______ is the person who earns money for the family.<br>A. supporter &nbsp; B. breadwinner ✅ &nbsp; C. teacher &nbsp; D. worker</li>
+<li>We should ______ our parents when they are sad.<br>A. damage &nbsp; B. rubbish &nbsp; C. cheer up ✅ &nbsp; D. support</li>
+<li>Doing exercise every day can ______ your health.<br>A. strengthen ✅ &nbsp; B. rubbish &nbsp; C. damage &nbsp; D. heavy lifting</li>
+<li>We must take ______ for our actions.<br>A. routine &nbsp; B. value &nbsp; C. responsibility ✅ &nbsp; D. manner</li>
+<li>He always tells the truth, he is a ______ person.<br>A. truthful ✅ &nbsp; B. lazy &nbsp; C. rubbish &nbsp; D. damage</li>
+<li>Please put the ______ into the bin.<br>A. rubbish ✅ &nbsp; B. benefit &nbsp; C. bond &nbsp; D. grocery</li>
+<li>My sister does the ______ like washing clothes.<br>A. manner &nbsp; B. laundry ✅ &nbsp; C. character &nbsp; D. routine</li>
+<li>Good ______ help you behave politely.<br>A. groceries &nbsp; B. manners ✅ &nbsp; C. supports &nbsp; D. truths</li>
+<li>This gift is to show my ______ for your help.<br>A. damage &nbsp; B. gratitude ✅ &nbsp; C. rubbish &nbsp; D. bond</li>
+</ol>
+                                        </div></div></div>
+
+<!-- Unit 2 -->
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unit2Content">📘 Unit 2: Relationships</button>
+  </h2>
+  <div id="unit2Content" class="accordion-collapse collapse">
+    <div class="accordion-body">
+      <p><em>Đang cập nhật nội dung Unit 2...</em></p>
+    </div>
+  </div>
+</div>
+
+<!-- Unit 3 -->
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#unit3Content">📘 Unit 3: Becoming Independent</button>
+  </h2>
+  <div id="unit3Content" class="accordion-collapse collapse">
+    <div class="accordion-body">
+      <p><em>Đang cập nhật nội dung Unit 3...</em></p>
+    </div>
+  </div>
+</div>
+</div></div></div></div></div></div></div>
+                <!-- Khối 11 và 12 giữ nguyên như trước -->
+            </div>
+			<!-- =================== START: UNIT 1 - A LONG AND HEALTHY LIFE (LỚP 11) =================== -->
+<style>
+/* Unit 1 - Modern Blue Styles (self-contained) */
+.unit-11 { --brand:#007bff; --accent:#6f42c1; --bg:#f7fbff; margin:20px 0; padding:18px; background:linear-gradient(180deg, #ffffff 0%, #f8fbff 100%); border-radius:12px; box-shadow:0 6px 18px rgba(15,39,61,0.06); font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+.unit-11 h2{color:var(--brand); margin-bottom:8px;}
+.unit-11 .part-title{background:linear-gradient(90deg, rgba(0,123,255,0.06), rgba(111,66,193,0.03)); border-left:4px solid var(--brand); padding:10px 14px; margin:18px 0 10px; border-radius:6px; font-weight:600;}
+.unit-11 .vocab-controls{display:flex;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap;}
+.unit-11 .vocab-controls select, .unit-11 .vocab-controls button{padding:6px 10px;border-radius:8px;border:1px solid #d7e8ff;background:#fff;cursor:pointer}
+.unit-11 .vocab-table{width:100%;border-collapse:collapse;margin:10px 0 18px;color:#123;font-size:15px;}
+.unit-11 .vocab-table thead th{background:var(--brand);color:#fff;padding:10px 12px;text-align:left;border-bottom:2px solid rgba(0,0,0,0.05);}
+.unit-11 .vocab-table td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.04);vertical-align:middle;}
+.unit-11 .listen-btn{background:transparent;border:none;width:36px;height:36px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s}
+.unit-11 .listen-btn:hover{transform:scale(1.05);background:rgba(0,123,255,0.06)}
+.unit-11 .flashcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px;}
+.unit-11 .flip-card{perspective:1000px}
+.unit-11 .flip-card-inner{position:relative;transition:transform .6s;transform-style:preserve-3d;height:140px;border-radius:10px;box-shadow:0 6px 18px rgba(15,39,61,0.06);overflow:hidden}
+.unit-11 .flip-card-front, .unit-11 .flip-card-back{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:12px;backface-visibility:hidden;background:#fff}
+.unit-11 .flip-card-back{transform:rotateY(180deg);background:linear-gradient(180deg,#f2f9ff,#ffffff)}
+.unit-11 .flipped{transform:rotateY(180deg)}
+.unit-11 .quiz{margin-top:14px}
+.unit-11 .question{padding:12px;border-radius:8px;background:#fff;border:1px solid rgba(0,123,255,0.06)}
+.unit-11 .options{margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.unit-11 .opt{padding:10px;background:#f8fbff;border-radius:8px;border:1px solid rgba(0,0,0,0.03);cursor:pointer}
+.unit-11 .opt.correct{outline:2px solid #28a745}
+.unit-11 .opt.wrong{outline:2px solid #dc3545}
+.unit-11 .controls{margin-top:12px;display:flex;gap:8px}
+.unit-11 .small-muted{color:#6b7280;font-size:13px}
+.unit-11 .grammar pre{background:#fbfcff;padding:12px;border-radius:8px;border:1px solid rgba(0,0,0,0.03);overflow:auto}
+.unit-11 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.unit-11 .audio-controls{display:flex;gap:8px;align-items:center}
+@media(max-width:880px){.unit-11 .two-col{grid-template-columns:1fr}}
+</style>
+
+<div class="unit-11" id="unit11_full">
+  <h2>Unit 1 — A LONG AND HEALTHY LIFE</h2>
+  <p class="small-muted">Bài học: sức khỏe, lối sống, phòng bệnh và tuổi thọ — đầy đủ vocabulary, pronunciation, grammar, speaking, reading, writing, exercises & audio.</p>
+
+  <!-- NAV INSIDE UNIT -->
+  <div class="part-title">Mục lục (nhanh)</div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+    <a href="#vocabulary11" class="btn btn-outline-primary btn-sm">Vocabulary</a>
+    <a href="#pronun11" class="btn btn-outline-primary btn-sm">Pronunciation</a>
+    <a href="#grammar11" class="btn btn-outline-primary btn-sm">Grammar</a>
+    <a href="#speaking11" class="btn btn-outline-primary btn-sm">Speaking</a>
+    <a href="#reading11" class="btn btn-outline-primary btn-sm">Reading</a>
+    <a href="#writing11" class="btn btn-outline-primary btn-sm">Writing</a>
+    <a href="#exercises11" class="btn btn-outline-primary btn-sm">Exercises</a>
+    <a href="#audio11" class="btn btn-outline-primary btn-sm">Audio</a>
+  </div>
+
+  <!-- ================= VOCABULARY ================= -->
+  <div id="vocabulary11" class="part-title">Part 1 — Vocabulary (45 từ)</div>
+
+  <div class="vocab-controls">
+    <div>
+      <label class="small-muted">Voice:</label>
+      <select id="voiceSelect" aria-label="voice select">
+        <option value="en-US">English (US)</option>
+        <option value="en-GB">English (UK)</option>
+      </select>
+    </div>
+    <div class="audio-controls small-muted">
+      <span>Phát toàn bảng:</span>
+      <button class="btn btn-sm btn-outline-primary" id="playAllBtn">▶ Play</button>
+      <button class="btn btn-sm btn-outline-secondary" id="stopAllBtn">■ Stop</button>
+    </div>
+    <div style="margin-left:auto" class="small-muted">Click biểu tượng 🔈 để nghe từ (UK/US)</div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="vocab-table" id="vocabTable">
+      <thead>
+        <tr>
+          <th style="width:18%">Word</th>
+          <th style="width:12%">POS</th>
+          <th style="width:14%">IPA</th>
+          <th style="width:28%">Meaning (VN)</th>
+          <th style="width:20%">Example</th>
+          <th style="width:8%">🔈</th>
+        </tr>
+      </thead>
+      <tbody id="vocabBody">
+        <!-- JS will render rows -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Flashcards -->
+  <div class="part-title">Flashcards</div>
+  <div class="flashcards" id="flashcardsContainer">
+    <!-- JS will render flashcards -->
+  </div>
+
+  <!-- QUICK QUIZ (VOCAB) -->
+  <div class="part-title" style="margin-top:16px">Quick Quiz — Vocabulary</div>
+  <div class="quiz" id="quizVocab">
+    <div class="question" id="quizQuestion">Loading quiz...</div>
+    <div class="controls">
+      <button class="btn btn-primary btn-sm" id="nextQ">Next</button>
+      <div id="quizResult" style="margin-left:10px" class="small-muted"></div>
+    </div>
+  </div>
+
+  <!-- ================= PRONUNCIATION ================= -->
+  <div id="pronun11" class="part-title">Part 2 — Pronunciation</div>
+  <div class="two-col">
+    <div>
+      <h5>Trọng âm & phát âm (stress)</h5>
+      <p>Trong Unit này học trọng âm từ vựng 1-2. Ví dụ: <b>ˈlongevity</b> (stress on 2nd syllable), <b>ˈnutrition</b>, <b>balˈance</b>.</p>
+      <p>Practice: Click 🔈 để nghe mẫu rồi lặp lại theo giọng đã chọn (US/UK).</p>
+    </div>
+    <div>
+      <h5>Exercises (Pronunciation)</h5>
+      <ol>
+        <li>Listen & repeat: longevity, nutrition, circulation, immune system.</li>
+        <li>Mark stress: write the stressed syllable for 5 words.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ================= GRAMMAR ================= -->
+  <div id="grammar11" class="part-title">Part 3 — Grammar: Used to / Be used to / Get used to</div>
+  <div class="grammar">
+    <p><b>Used to + V</b>: hành động trong quá khứ nhưng bây giờ không làm nữa.<br>
+    <i>Example:</i> I <b>used to</b> eat a lot of fast food, but now I eat healthier.</p>
+
+    <p><b>Be used to + V-ing / N</b>: quen với việc gì (state).</p>
+    <p><b>Get used to + V-ing / N</b>: trở nên quen với việc gì (process).</p>
+
+    <pre>
+Examples:
+- She is <b>used to</b> getting up early.
+- After moving to the city, he <b>got used to</b> noisy traffic.
+    </pre>
+
+    <h6>Practice</h6>
+    <ol>
+      <li>Complete: "I ___ (use) to smoke, but I don't now."</li>
+      <li>Rewrite: "It was hard at first; now I'm comfortable with it." → "I ___ to it."</li>
+    </ol>
+  </div>
+
+  <!-- ================= SPEAKING ================= -->
+  <div id="speaking11" class="part-title">Part 4 — Speaking</div>
+  <div>
+    <h5>Hội thoại mẫu</h5>
+    <p><b>Context:</b> Two students discussing healthy habits.</p>
+    <pre>
+A: How do you manage stress during exams?
+B: I try to exercise and meditate. It helps me stay calm.
+A: Do you think diet affects mood?
+B: Definitely. A balanced diet keeps my energy stable.
+    </pre>
+
+    <h6>Speaking task</h6>
+    <p>Practice with a partner or record yourself: talk for 1–2 minutes about "How to lead a healthy lifestyle as a student". Try to use at least 6 vocabulary words from the table.</p>
+  </div>
+
+  <!-- ================= READING ================= -->
+  <div id="reading11" class="part-title">Part 5 — Reading</div>
+  <div>
+    <h5>Reading text — A long and healthy life</h5>
+    <p id="readingText">
+      Modern research shows that combining a balanced diet, regular exercise and enough sleep can significantly increase life expectancy. Communities that support healthy routines and reduce stress tend to enjoy higher well-being. Prevention — through vaccines and early diagnosis — is a key factor in avoiding chronic diseases.
+    </p>
+
+    <h6>Comprehension questions</h6>
+    <ol>
+      <li>What three factors are mentioned as increasing life expectancy?</li>
+      <li>Why are communities important for well-being?</li>
+      <li>What role does prevention play?</li>
+    </ol>
+  </div>
+
+  <!-- ================= WRITING ================= -->
+  <div id="writing11" class="part-title">Part 6 — Writing</div>
+  <div>
+    <h5>Writing task</h5>
+    <p>Write a short paragraph (120–150 words): "How to build healthy habits at school". Use vocabulary from the Unit and include at least one grammar structure from the Grammar section (Used to / Be used to / Get used to).</p>
+
+    <h6>Model answer (example)</h6>
+    <p class="small-muted">
+      To build healthy habits at school, students should create a balanced routine that includes regular exercise and quality sleep. I used to stay up late, but now I am used to going to bed earlier. Eating nutritious meals and staying hydrated help improve concentration and overall well-being. Schools can support students by promoting physical activities and providing healthy food options.
+    </p>
+  </div>
+
+  <!-- ================= EXERCISES ================= -->
+  <div id="exercises11" class="part-title">Part 7 — Exercises</div>
+  <div>
+    <h6>Multiple choice (vocabulary)</h6>
+    <ol>
+      <li>Which word means "tuổi thọ"? A. Diet B. Longevity C. Groove D. Routine</li>
+      <li>Which is a medical prevention? A. Surgery B. Vaccine C. Heavy lifting D. Chore</li>
+    </ol>
+
+    <h6>Grammar (fill in)</h6>
+    <ol>
+      <li>I ___ (use) to drink coffee every morning, but I stopped last year.</li>
+      <li>He is ___ (get) to studying longer hours.</li>
+    </ol>
+
+    <h6>Answers</h6>
+    <p class="small-muted">MC: 1-B, 2-B. Grammar: 1-used, 2-getting</p>
+  </div>
+
+  <!-- ================= AUDIO ================= -->
+  <div id="audio11" class="part-title">Part 8 — Audio revision</div>
+  <div>
+    <p>Press <b>Play</b> to let the browser read the Reading text and vocabulary examples in the voice you selected (UK/US).</p>
+    <div style="display:flex;gap:8px;align-items:center">
+      <button class="btn btn-primary btn-sm" id="playUnitBtn">▶ Play Unit</button>
+      <button class="btn btn-secondary btn-sm" id="pauseUnitBtn">⏸ Pause</button>
+      <button class="btn btn-danger btn-sm" id="cancelUnitBtn">■ Stop</button>
+      <div class="small-muted" style="margin-left:10px">Note: Voice depends on browser and OS. If voices not loaded, refresh page.</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* =================== UNIT 1 JS =================== */
+/* Vocabulary data (45 items) */
+const vocabData = [
+  {w:"Longevity", pos:"n", ipa:"/lɒnˈdʒevəti/", vn:"Tuổi thọ", ex:"Good nutrition can increase your longevity."},
+  {w:"Lifestyle", pos:"n", ipa:"/ˈlaɪfstaɪl/", vn:"Lối sống", ex:"A healthy lifestyle includes regular exercise and enough sleep."},
+  {w:"Nutrition", pos:"n", ipa:"/njuːˈtrɪʃən/", vn:"Dinh dưỡng", ex:"Children need proper nutrition to grow strong."},
+  {w:"Balance", pos:"n / v", ipa:"/ˈbæləns/", vn:"Cân bằng", ex:"You should balance study and relaxation."},
+  {w:"Stress", pos:"n", ipa:"/stres/", vn:"Căng thẳng", ex:"Too much stress can harm your health."},
+  {w:"Diet", pos:"n", ipa:"/ˈdaɪət/", vn:"Chế độ ăn", ex:"She follows a vegetarian diet to stay healthy."},
+  {w:"Exercise", pos:"n / v", ipa:"/ˈeksəsaɪz/", vn:"Tập thể dục", ex:"Regular exercise improves your mental health."},
+  {w:"Mental health", pos:"n", ipa:"/ˈmentl helθ/", vn:"Sức khỏe tinh thần", ex:"Taking breaks helps protect your mental health."},
+  {w:"Well-being", pos:"n", ipa:"/ˈwelbiːɪŋ/", vn:"Sức khoẻ tổng thể", ex:"Sleep plays an important role in your overall well-being."},
+  {w:"Aging", pos:"n", ipa:"/ˈeɪdʒɪŋ/", vn:"Sự lão hóa", ex:"Regular exercise can slow down aging."},
+  {w:"Immune system", pos:"n", ipa:"/ɪˈmjuːn ˌsɪstəm/", vn:"Hệ miễn dịch", ex:"Vitamin C helps strengthen the immune system."},
+  {w:"Circulation", pos:"n", ipa:"/ˌsɜːrkjəˈleɪʃən/", vn:"Tuần hoàn máu", ex:"Drinking water improves blood circulation."},
+  {w:"Muscle", pos:"n", ipa:"/ˈmʌsəl/", vn:"Cơ bắp", ex:"He built strong muscles by lifting weights."},
+  {w:"Joint", pos:"n", ipa:"/dʒɔɪnt/", vn:"Khớp", ex:"As people age, their joints become weaker."},
+  {w:"Bone", pos:"n", ipa:"/boʊn/", vn:"Xương", ex:"Milk keeps your bones strong and healthy."},
+  {w:"Cell", pos:"n", ipa:"/sel/", vn:"Tế bào", ex:"Human bodies are made of millions of cells."},
+  {w:"Skin", pos:"n", ipa:"/skɪn/", vn:"Da", ex:"Drinking water is good for your skin."},
+  {w:"Memory loss", pos:"n", ipa:"/ˈmeməri lɔːs/", vn:"Mất trí nhớ", ex:"Memory loss may occur as people get older."},
+  {w:"Workout", pos:"n", ipa:"/ˈwɜːrkaʊt/", vn:"Buổi tập luyện", ex:"He does a 30-minute workout every morning."},
+  {w:"Meditation", pos:"n", ipa:"/ˌmedɪˈteɪʃən/", vn:"Thiền", ex:"Meditation helps reduce stress and improve focus."},
+  {w:"Stay hydrated", pos:"phrase", ipa:"/steɪ ˈhaɪdreɪtɪd/", vn:"Giữ đủ nước", ex:"Remember to stay hydrated in hot weather."},
+  {w:"Healthy routine", pos:"n", ipa:"/ˈhelθi ruːˈtiːn/", vn:"Thói quen lành mạnh", ex:"She follows a healthy routine with regular sleep."},
+  {w:"Positive mindset", pos:"n", ipa:"/ˈpɒzɪtɪv ˈmaɪndset/", vn:"Tư duy tích cực", ex:"A positive mindset leads to a happier life."},
+  {w:"Discipline", pos:"n", ipa:"/ˈdɪsəplɪn/", vn:"Kỷ luật", ex:"Discipline is the key to achieving your goals."},
+  {w:"Self-care", pos:"n", ipa:"/ˌself ˈkeə(r)/", vn:"Tự chăm sóc", ex:"Self-care means taking time to relax and recharge."},
+  {w:"Balanced diet", pos:"n", ipa:"/ˈbælənst ˈdaɪət/", vn:"Chế độ ăn cân bằng", ex:"A balanced diet includes fruits, vegetables and proteins."},
+  {w:"Quality sleep", pos:"n", ipa:"/ˈkwɒləti sliːp/", vn:"Giấc ngủ chất lượng", ex:"Teenagers need quality sleep for healthy growth."},
+  {w:"Diagnosis", pos:"n", ipa:"/ˌdaɪəɡˈnoʊsɪs/", vn:"Chẩn đoán", ex:"The doctor made a quick diagnosis after the test."},
+  {w:"Treatment", pos:"n", ipa:"/ˈtriːtmənt/", vn:"Điều trị", ex:"She is receiving treatment for her illness."},
+  {w:"Prevent", pos:"v", ipa:"/prɪˈvent/", vn:"Ngăn ngừa", ex:"Washing hands helps prevent disease."},
+  {w:"Recovery", pos:"n", ipa:"/rɪˈkʌvəri/", vn:"Hồi phục", ex:"Exercise supports faster recovery."},
+  {w:"Surgery", pos:"n", ipa:"/ˈsɜːrdʒəri/", vn:"Phẫu thuật", ex:"He had heart surgery last year."},
+  {w:"Symptom", pos:"n", ipa:"/ˈsɪmptəm/", vn:"Triệu chứng", ex:"Common symptoms of flu include fever and cough."},
+  {w:"Chronic", pos:"adj", ipa:"/ˈkrɒnɪk/", vn:"Mãn tính", ex:"Chronic diseases require long-term treatment."},
+  {w:"Infection", pos:"n", ipa:"/ɪnˈfekʃən/", vn:"Nhiễm trùng", ex:"The wound became serious due to infection."},
+  {w:"Vaccine", pos:"n", ipa:"/ˈvæksiːn/", vn:"Vắc-xin", ex:"Vaccines help prevent dangerous diseases."},
+  {w:"Life expectancy", pos:"n phrase", ipa:"/laɪf ɪkˈspektənsi/", vn:"Tuổi thọ trung bình", ex:"Life expectancy has increased in many countries."},
+  {w:"Stay healthy", pos:"phrase", ipa:"/steɪ ˈhelθi/", vn:"Giữ sức khỏe", ex:"We should exercise to stay healthy."},
+  {w:"Take exercise", pos:"v phrase", ipa:"/teɪk ˈeksəsaɪz/", vn:"Tập thể dục", ex:"You should take exercise regularly."},
+  {w:"Lead a healthy lifestyle", pos:"v phrase", ipa:"/liːd ə ˈhelθi ˈlaɪfstaɪl/", vn:"Sống lành mạnh", ex:"He leads a healthy lifestyle by avoiding fast food."}
+];
+
+/* Render vocab table & flashcards */
+const vocabBody = document.getElementById('vocabBody');
+const flashContainer = document.getElementById('flashcardsContainer');
+
+function createVocabUI(){
+  vocabBody.innerHTML = '';
+  flashContainer.innerHTML = '';
+  vocabData.forEach((item, idx) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><strong>${item.w}</strong></td>
+      <td>${item.pos}</td>
+      <td><em>${item.ipa}</em></td>
+      <td>${item.vn}</td>
+      <td>${item.ex}</td>
+      <td style="text-align:center">
+        <button class="listen-btn" title="Listen" data-word="${item.w}" aria-label="listen">🔈</button>
+      </td>
+    `;
+    vocabBody.appendChild(tr);
+
+    // flashcard
+    const cardWr = document.createElement('div');
+    cardWr.className = 'flip-card';
+    cardWr.innerHTML = `<div class="flip-card-inner" data-index="${idx}">
+      <div class="flip-card-front">${item.w} <br><small>${item.ipa}</small></div>
+      <div class="flip-card-back">${item.vn}<br><small style="opacity:.8">${item.ex}</small></div>
+    </div>`;
+    flashContainer.appendChild(cardWr);
+
+    // click to flip
+    cardWr.querySelector('.flip-card-inner').addEventListener('click', function(){
+      this.classList.toggle('flipped');
+    });
+  });
+
+  // add listener to listen buttons
+  document.querySelectorAll('.listen-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=> {
+      const word = btn.getAttribute('data-word');
+      speakText(word);
+    });
+  });
+}
+
+/* Speech synthesis helpers */
+let synth = window.speechSynthesis;
+let selectedVoiceLocale = 'en-US';
+const voiceSelect = document.getElementById('voiceSelect');
+voiceSelect.addEventListener('change', (e)=> selectedVoiceLocale = e.target.value);
+
+/* Choose voice by locale when speaking */
+function getVoiceByLocale(locale){
+  const voices = synth.getVoices();
+  // prefer exact locale, else fallback
+  let v = voices.find(v=>v.lang.toLowerCase().startsWith(locale.toLowerCase()));
+  if(!v){
+    // prefer en-US or en-GB fallback
+    v = voices.find(v=>v.lang.toLowerCase().startsWith('en-us')) || voices.find(v=>v.lang.toLowerCase().startsWith('en-gb')) || voices[0];
+  }
+  return v;
+}
+
+function speakText(text, rate=1){
+  if(synth.speaking) synth.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = selectedVoiceLocale;
+  const voice = getVoiceByLocale(selectedVoiceLocale);
+  if(voice) utter.voice = voice;
+  utter.rate = rate;
+  synth.speak(utter);
+}
+
+/* Play full unit reading (reads reading text + examples) */
+document.getElementById('playUnitBtn').addEventListener('click', ()=>{
+  const reading = document.getElementById('readingText').innerText;
+  // read reading text, then 10 example sentences
+  let toRead = reading + '. Now I will read some example sentences. ';
+  const examples = vocabData.slice(0,10).map(v=>v.ex);
+  toRead += examples.join(' ... ');
+  speakText(toRead, 0.95);
+});
+document.getElementById('pauseUnitBtn').addEventListener('click', ()=>{ if(synth.speaking) synth.pause(); });
+document.getElementById('cancelUnitBtn').addEventListener('click', ()=>{ if(synth.speaking) synth.cancel(); });
+
+/* Play/Stop all single-word (iterate) */
+let playAllInterval = null;
+document.getElementById('playAllBtn').addEventListener('click', ()=>{
+  if(playAllInterval) { clearInterval(playAllInterval); playAllInterval = null; return; }
+  let i=0;
+  playAllInterval = setInterval(()=>{
+    if(i>=vocabData.length){ clearInterval(playAllInterval); playAllInterval=null; return; }
+    speakText(vocabData[i].w, 1);
+    i++;
+  }, 900);
+});
+document.getElementById('stopAllBtn').addEventListener('click', ()=>{ if(playAllInterval){ clearInterval(playAllInterval); playAllInterval=null; } if(synth.speaking) synth.cancel(); });
+
+/* Ensure voices loaded (some browsers load async) */
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = function() {
+    // nothing special for now
+  };
+}
+
+/* =============== Quiz logic =============== */
+const quizQ = document.getElementById('quizQuestion');
+const quizRes = document.getElementById('quizResult');
+const nextQ = document.getElementById('nextQ');
+
+let quizIndex = 0;
+const quizList = generateQuizFromVocab(vocabData, 6);
+function generateQuizFromVocab(data, n){
+  const qs = [];
+  const keys = [...data];
+  for(let i=0;i<n;i++){
+    const idx = Math.floor(Math.random()*keys.length);
+    const word = keys[idx];
+    // pick 3 distractors
+    const others = data.filter(d=>d.w!==word.w);
+    const opts = [word.w];
+    while(opts.length<4){
+      const r = others[Math.floor(Math.random()*others.length)].w;
+      if(!opts.includes(r)) opts.push(r);
+    }
+    // shuffle opts
+    for(let j=opts.length-1;j>0;j--){ const k=Math.floor(Math.random()*(j+1)); [opts[j],opts[k]]=[opts[k],opts[j]]; }
+    qs.push({q:`Which word matches: "${word.vn}"`, answer:word.w, options:opts});
+  }
+  return qs;
+}
+
+function showQuiz(i){
+  const q = quizList[i];
+  quizQ.innerHTML = `<strong>Q${i+1}.</strong> ${q.q}`;
+  // build options
+  const optsHtml = document.createElement('div');
+  optsHtml.className='options';
+  q.options.forEach(opt=>{
+    const b = document.createElement('div');
+    b.className='opt';
+    b.innerText = opt;
+    b.addEventListener('click', ()=>{
+      if(b.classList.contains('disabled')) return;
+      if(opt===q.answer){ b.classList.add('correct'); quizRes.innerText='Correct!'; }
+      else { b.classList.add('wrong'); quizRes.innerText=`Wrong — answer: ${q.answer}`; }
+      // disable all
+      document.querySelectorAll('.opt').forEach(x=>x.classList.add('disabled'));
+    });
+    optsHtml.appendChild(b);
+  });
+  // replace quizQuestion content with options appended
+  quizQ.innerHTML = `<strong>Q${i+1}.</strong> ${q.q}`;
+  // remove old options if any
+  const old = quizQ.parentNode.querySelector('.options');
+  if(old) old.remove();
+  quizQ.parentNode.insertBefore(optsHtml, quizQ.nextSibling);
+  quizRes.innerText = '';
+}
+
+nextQ.addEventListener('click', ()=>{
+  quizIndex = (quizIndex+1) % quizList.length;
+  showQuiz(quizIndex);
+});
+
+/* initialize UI */
+createVocabUI();
+showQuiz(quizIndex);
+
+/* Optional: keyboard shortcuts for flashcards (left/right to navigate in container) */
+document.addEventListener('keydown', (e)=>{
+  if(e.key==='ArrowLeft' || e.key==='ArrowRight'){
+    // no-op currently — could navigate flashcards if desired
+  }
+});
+</script>
+
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    let readState = {};
+    function speak(word) {
+        if (!readState[word]) readState[word] = "normal";
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = "en-US";
+        if (readState[word] === "normal") {
+            utterance.rate = 1;
+            readState[word] = "slow";
+        } else {
+            utterance.rate = 0.6;
+            readState[word] = "normal";
+        }
+        speechSynthesis.speak(utterance);
+    }
+    document.querySelectorAll(".speak-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+            speak(this.getAttribute("data-word"));
+        });
+    });
+</script>
+<script>
+let readState={};
+function speak(word,btn){if(!readState[word])readState[word]="normal";const u=new SpeechSynthesisUtterance(word);u.lang="en-US";u.rate=readState[word]==="normal"?1:0.6;readState[word]=readState[word]==="normal"?"slow":"normal";btn.classList.add("speaking");u.onend=()=>btn.classList.remove("speaking");new Audio('https://cdn.pixabay.com/download/audio/2022/03/15/audio_7ce4b77dae.mp3').play();speechSynthesis.speak(u);} 
+document.querySelectorAll('.speak-btn').forEach(btn=>{btn.addEventListener('click',()=>speak(btn.dataset.word,btn));});
+</script>
+</body>
+</html>

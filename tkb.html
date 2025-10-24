@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>📅 Thời Khóa Biểu</title>
+  <link rel="stylesheet" href="trangchinh.html"/styles.css">
+  <style>
+    main {
+      max-width: 1000px;
+      margin: auto;
+      background-color: #ffffffcc;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #999;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    td[contenteditable] {
+      background-color: #fdfdfd;
+      cursor: text;
+    }
+
+    td:focus {
+      outline: 2px solid #4CAF50;
+      background-color: #eaffea;
+    }
+
+    .section-title {
+      text-align: left;
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .note-area {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+      font-size: 16px;
+      font-family: inherit;
+      margin-top: 10px;
+      background-color: #fdfdfd;
+    }
+
+    .save-button {
+      margin-top: 15px;
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .save-button:hover {
+      background-color: #388E3C;
+    }
+  </style>
+</head>
+<body class="theme-co-ban">
+
+  <header>
+    <h1>📅 Thời Khóa Biểu (Sáng & Trưa)</h1>
+    <a href="trangchinh.html">← Quay về trang chính</a>
+  </header>
+
+  <main>
+    <p>👉 Click vào ô để chỉnh sửa môn học. Dữ liệu sẽ được lưu lại trên trình duyệt của bạn.</p>
+
+    <!-- Buổi Sáng -->
+    <div class="section-title">☀️ Buổi Sáng</div>
+    <table id="tkb-sang">
+      <thead>
+        <tr>
+          <th>Tiết / Ngày</th>
+          <th>Thứ Hai</th>
+          <th>Thứ Ba</th>
+          <th>Thứ Tư</th>
+          <th>Thứ Năm</th>
+          <th>Thứ Sáu</th>
+          <th>Thứ Bảy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <script>
+          for (let i = 1; i <= 5; i++) {
+            document.write("<tr>");
+            document.write(`<th>Tiết ${i}</th>`);
+            for (let j = 1; j <= 6; j++) {
+              document.write(`<td contenteditable="true" data-type="sang" data-row="${i}" data-col="${j}"></td>`);
+            }
+            document.write("</tr>");
+          }
+        </script>
+      </tbody>
+    </table>
+
+    <!-- Buổi Trưa -->
+    <div class="section-title">🌤️ Buổi Trưa</div>
+    <table id="tkb-trua">
+      <thead>
+        <tr>
+          <th>Tiết / Ngày</th>
+          <th>Thứ Hai</th>
+          <th>Thứ Ba</th>
+          <th>Thứ Tư</th>
+          <th>Thứ Năm</th>
+          <th>Thứ Sáu</th>
+          <th>Thứ Bảy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <script>
+          for (let i = 1; i <= 5; i++) {
+            document.write("<tr>");
+            document.write(`<th>Tiết ${i}</th>`);
+            for (let j = 1; j <= 6; j++) {
+              document.write(`<td contenteditable="true" data-type="trua" data-row="${i}" data-col="${j}"></td>`);
+            }
+            document.write("</tr>");
+          }
+        </script>
+      </tbody>
+    </table>
+
+    <!-- Ghi chú -->
+    <div class="section-title">📝 Ghi chú</div>
+    <textarea id="ghi-chu" class="note-area" placeholder="Nhập ghi chú tại đây..."></textarea>
+
+    <button class="save-button" onclick="saveTKB()">💾 Lưu thời khóa biểu & ghi chú</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Thời khóa biểu cá nhân</p>
+  </footer>
+
+  <script>
+    function saveTKB() {
+      const cells = document.querySelectorAll("td[contenteditable]");
+      const data = {};
+      cells.forEach(cell => {
+        const type = cell.getAttribute("data-type");
+        const row = cell.getAttribute("data-row");
+        const col = cell.getAttribute("data-col");
+        data[`${type}-${row}-${col}`] = cell.innerText.trim();
+      });
+
+      // Lưu ghi chú
+      const note = document.getElementById("ghi-chu").value.trim();
+      localStorage.setItem("tkb-data", JSON.stringify(data));
+      localStorage.setItem("tkb-note", note);
+
+      alert("✅ Đã lưu thời khóa biểu và ghi chú!");
+    }
+
+    function loadTKB() {
+      const data = JSON.parse(localStorage.getItem("tkb-data")) || {};
+      const cells = document.querySelectorAll("td[contenteditable]");
+      cells.forEach(cell => {
+        const type = cell.getAttribute("data-type");
+        const row = cell.getAttribute("data-row");
+        const col = cell.getAttribute("data-col");
+        const key = `${type}-${row}-${col}`;
+        if (data[key]) {
+          cell.innerText = data[key];
+        }
+      });
+
+      // Tải ghi chú
+      const note = localStorage.getItem("tkb-note") || "";
+      document.getElementById("ghi-chu").value = note;
+    }
+
+    window.onload = loadTKB;
+  </script>
+
+</body>
+</html>
+<a href="trangchinh.html">← Quay về trang chính</a>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<a href="trangchinh.html">← Quay về trang chính</a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Góc Học Tập Môn Hóa Học</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f9ff;
+        }
+        .header-bg {
+            background-color: #0d6efd;
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        .content-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .lesson-title {
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .lesson-title:hover {
+            background-color: #cfe2ff;
+        }
+        .sidebar .nav-link {
+            color: #333;
+            padding: 5px 10px;
+            font-size: 15px;
+        }
+        .sidebar .nav-link:hover {
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<a href="trang chính.html" class="btn btn-link m-3">← Quay về trang chính</a>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse show border-end" style="min-height: 100vh;">
+            <div class="position-sticky p-3">
+                <h5 class="text-primary">📚 Danh mục</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#khoi10">Hóa 10</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success fw-bold" href="#khoi11">Hóa 11</a>
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#collapseHoa11_b1">1. Cân bằng hóa học</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#collapseHoa11_b2">2. Cân bằng trong dung dịch nước</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#collapseHoa11_b3">3. Đơn chất Nitơ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#collapseHoa11_test15">🔸 Kiểm tra 15p</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#collapseHoa11_testdk">🔸 Kiểm tra định kỳ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#khoi12">Hóa 12</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Nội dung chính -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <header class="header-bg text-center">
+                <h1>🧪 Góc Học Tập Môn Hóa Học 🔬</h1>
+                <p class="lead">Kiến thức trọng tâm & bài tập Hóa khối 10, 11, 12</p>
+            </header>
+
+            <!-- Tabs khối -->
+            <ul class="nav nav-tabs justify-content-center" id="hoaTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="khoi10-tab" data-bs-toggle="tab" data-bs-target="#khoi10" type="button" role="tab" aria-controls="khoi10" aria-selected="false">Khối 10</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="khoi11-tab" data-bs-toggle="tab" data-bs-target="#khoi11" type="button" role="tab" aria-controls="khoi11" aria-selected="true">Khối 11</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="khoi12-tab" data-bs-toggle="tab" data-bs-target="#khoi12" type="button" role="tab" aria-controls="khoi12" aria-selected="false">Khối 12</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="hoaTabContent">
+
+                <!-- KHỐI 10 -->
+                <div class="tab-pane fade" id="khoi10" role="tabpanel" aria-labelledby="khoi10-tab">
+                    <div class="content-section mt-4">
+                        <h2 class="text-primary">🔹 Hóa Học Đại Cương</h2>
+                        <p>Đây là phần nội dung của Hóa học lớp 10. Bạn có thể thêm các chương tương tự như khối 11.</p>
+                    </div>
+                </div>
+
+                <!-- KHỐI 11 -->
+                <div class="tab-pane fade show active" id="khoi11" role="tabpanel" aria-labelledby="khoi11-tab">
+                    <div class="content-section mt-4">
+                        <h2 class="text-success">🔹 Hóa Học Lớp 11 – Chương 1: Cân bằng hóa học</h2>
+                        <div class="accordion" id="hoa11Accordion">
+
+                            <!-- Bài 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="hoa11_b1">
+                                    <button class="accordion-button lesson-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHoa11_b1" aria-expanded="false" aria-controls="collapseHoa11_b1">
+                                        1. Khái niệm về cân bằng hóa học
+                                    </button>
+                                </h2>
+                                <div id="collapseHoa11_b1" class="accordion-collapse collapse" aria-labelledby="hoa11_b1" data-bs-parent="#hoa11Accordion">
+                                    <div class="accordion-body">
+                                        <h4>📘 Lý thuyết bài giảng</h4>
+                                        <p>Cân bằng hóa học là trạng thái trong đó tốc độ phản ứng thuận bằng tốc độ phản ứng nghịch.</p>
+                                        <hr>
+										<h4>🎥 Video minh họa</h4>
+<div class="ratio ratio-16x9 mb-3">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/tcPTbT59upo?si=_c4zj06fOFjCFsG4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+                                        <h4>🧠 Sơ đồ tư duy</h4>
+                                        <img src="anhsodotuduyhoa1.png" alt="Sơ đồ tư duy Bài 1" class="img-fluid mb-3">
+                                        <hr>
+                                        <h4>📝 Bài tập luyện tập</h4>
+                                        <a href="hoa11bai1tluyen.docx" class="btn btn-sm btn-outline-success">Tải bài tập Bài 1</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bài 2 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="hoa11_b2">
+                                    <button class="accordion-button lesson-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHoa11_b2" aria-expanded="false" aria-controls="collapseHoa11_b2">
+                                        2. Cân bằng trong dung dịch nước
+                                    </button>
+                                </h2>
+                                <div id="collapseHoa11_b2" class="accordion-collapse collapse" aria-labelledby="hoa11_b2" data-bs-parent="#hoa11Accordion">
+                                    <div class="accordion-body">
+                                        <h4>📘 Lý thuyết bài giảng</h4>
+                                        <p>Hiện tượng cân bằng diễn ra khi nồng độ ion trong dung dịch đạt trạng thái ổn định.</p>
+                                        <hr>
+										<h4>🎥 Video minh họa</h4>
+<div class="ratio ratio-16x9 mb-3">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eVvlVnGQ3IU?si=EaPEq_LIZjFtvs1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+                                        <h4>🧠 Sơ đồ tư duy</h4>
+                                        <img src="anhsodotuduyhoa2.png" alt="Sơ đồ tư duy Bài 2" class="img-fluid mb-3">
+                                        <hr>
+                                        <h4>📝 Bài tập luyện tập</h4>
+                                        <a href="hoa11bai2tluyen" class="btn btn-sm btn-outline-success">Tải bài tập Bài 2</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bài 3 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="hoa11_b3">
+                                    <button class="accordion-button lesson-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHoa11_b3" aria-expanded="false" aria-controls="collapseHoa11_b3">
+                                        3. Đơn chất Nitơ
+                                    </button>
+                                </h2>
+                                <div id="collapseHoa11_b3" class="accordion-collapse collapse" aria-labelledby="hoa11_b3" data-bs-parent="#hoa11Accordion">
+                                    <div class="accordion-body">
+                                        <h4>📘 Lý thuyết bài giảng</h4>
+                                        <p>Nitơ là nguyên tố phi kim, chiếm 78% khí quyển, không màu, không mùi, ít tan trong nước.</p>
+                                        <hr>
+										<h4>🎥 Video minh họa</h4>
+<div class="ratio ratio-16x9 mb-3">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ycq8cZCVuy4?si=z1T4QEEjyk0gv3GG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+                                        <h4>🧠 Sơ đồ tư duy</h4>
+                                        <img src="anhsodotuduyhoa3.png" alt="Sơ đồ tư duy Bài 3" class="img-fluid mb-3">
+                                        <hr>
+                                        <h4>📝 Bài tập luyện tập</h4>
+                                        <a href="hoa11bai3tluyen" class="btn btn-sm btn-outline-success">Tải bài tập Bài 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Kiểm tra 15 phút -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="hoa11_test15">
+                                    <button class="accordion-button lesson-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHoa11_test15" aria-expanded="false" aria-controls="collapseHoa11_test15">
+                                        🔸 Bài kiểm tra 15 phút
+                                    </button>
+                                </h2>
+                                <div id="collapseHoa11_test15" class="accordion-collapse collapse" aria-labelledby="hoa11_test15" data-bs-parent="#hoa11Accordion">
+                                    <div class="accordion-body">
+                                        <p>Đề trắc nghiệm + tự luận cho chương 1.</p>
+                                        <a href="hoa11ktra15ptluyen" class="btn btn-outline-secondary">Tải đề kiểm tra 15p</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Kiểm tra định kỳ -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="hoa11_testdk">
+                                    <button class="accordion-button lesson-title collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHoa11_testdk" aria-expanded="false" aria-controls="collapseHoa11_testdk">
+                                        🔸 Bài kiểm tra định kỳ
+                                    </button>
+                                </h2>
+                                <div id="collapseHoa11_testdk" class="accordion-collapse collapse" aria-labelledby="hoa11_testdk" data-bs-parent="#hoa11Accordion">
+                                    <div class="accordion-body">
+                                        <p>Đề kiểm tra chương 1 theo cấu trúc đề chuẩn.</p>
+                                        <a href="#" class="btn btn-outline-secondary">Tải đề kiểm tra định kỳ</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KHỐI 12 -->
+                <div class="tab-pane fade" id="khoi12" role="tabpanel" aria-labelledby="khoi12-tab">
+                    <div class="content-section mt-4">
+                        <h2 class="text-danger">🔹 Ôn thi THPT Quốc Gia</h2>
+                        <p>Thêm các bài học và đề luyện tập lớp 12 tại đây.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tạo và Lưu trữ câu hỏi trắc nghiệm</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: #f5f7fa;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .box {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      flex: 1 1 400px;
+      min-width: 300px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus, textarea:focus, select:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+    button {
+      margin-top: 25px;
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #007bff;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .question-item {
+      border-bottom: 1px solid #eee;
+      padding: 12px 0;
+    }
+    .question-item:last-child {
+      border-bottom: none;
+    }
+    .subject-label {
+      font-weight: bold;
+      color: #007bff;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+    .answers {
+      margin-top: 6px;
+      padding-left: 18px;
+    }
+    .answer {
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    .correct {
+      font-weight: bold;
+      color: green;
+    }
+    #filterSubject {
+      margin-top: 15px;
+      padding: 7px 10px;
+      font-size: 14px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    @media (max-width: 760px) {
+      .container {
+        flex-direction: column;
+      }
+      .box {
+        max-height: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tạo và Lưu trữ câu hỏi trắc nghiệm</h1>
+
+  <div class="container">
+
+    <!-- Ô tạo câu hỏi -->
+    <div class="box">
+      <form id="createForm">
+        <label for="subject">Chọn môn học:</label>
+        <select id="subject" required>
+          <option value="" disabled selected>-- Chọn môn học --</option>
+          <option value="toan">Toán</option>
+          <option value="van">Văn</option>
+          <option value="hoa">Hóa</option>
+          <option value="li">Lý</option>
+        </select>
+
+        <label for="questionText">Nội dung câu hỏi:</label>
+        <textarea id="questionText" rows="4" placeholder="Nhập câu hỏi" required></textarea>
+        <button type="button" id="startRecQuestion">🎤 Ghi âm câu hỏi</button>
+
+        <label>Đáp án A:</label>
+        <input type="text" id="ansA" placeholder="Nhập đáp án A" required />
+
+        <label>Đáp án B:</label>
+        <input type="text" id="ansB" placeholder="Nhập đáp án B" required />
+
+        <label>Đáp án C:</label>
+        <input type="text" id="ansC" placeholder="Nhập đáp án C" required />
+
+        <label>Đáp án D:</label>
+        <input type="text" id="ansD" placeholder="Nhập đáp án D" required />
+
+        <label for="correctAns">Chọn đáp án đúng:</label>
+        <select id="correctAns" required>
+          <option value="" disabled selected>-- Chọn đáp án đúng --</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+        </select>
+
+        <button type="submit">Lưu câu hỏi</button>
+      </form>
+    </div>
+
+    <!-- Ô lưu trữ câu hỏi -->
+    <div class="box">
+      <label for="filterSubject"><strong>Lọc theo môn học:</strong></label>
+      <select id="filterSubject">
+        <option value="all" selected>Tất cả môn học</option>
+        <option value="toan">Toán</option>
+        <option value="van">Văn</option>
+        <option value="hoa">Hóa</option>
+        <option value="li">Lý</option>
+      </select>
+
+      <div id="questionList" style="margin-top: 15px;">
+        <!-- Danh sách câu hỏi sẽ hiển thị ở đây -->
+      </div>
+    </div>
+
+  </div>
+
+<script>
+  const form = document.getElementById('createForm');
+  const questionListEl = document.getElementById('questionList');
+  const filterSubjectEl = document.getElementById('filterSubject');
+  const startRecQuestionBtn = document.getElementById('startRecQuestion');
+  const questionText = document.getElementById('questionText');
+
+  function getQuestions(subject) {
+    const data = localStorage.getItem('questions_' + subject);
+    return data ? JSON.parse(data) : [];
+  }
+
+  function saveQuestion(subject, questionObj) {
+    const questions = getQuestions(subject);
+    questions.push(questionObj);
+    localStorage.setItem('questions_' + subject, JSON.stringify(questions));
+  }
+
+  function getAllQuestions() {
+    const subjects = ['toan', 'van', 'hoa', 'li'];
+    let all = [];
+    subjects.forEach(sub => {
+      const qs = getQuestions(sub);
+      qs.forEach(q => {
+        q.subject = sub;
+        all.push(q);
+      });
+    });
+    return all;
+  }
+
+  function subjectName(code) {
+    switch(code) {
+      case 'toan': return 'Toán';
+      case 'van': return 'Văn';
+      case 'hoa': return 'Hóa';
+      case 'li': return 'Lý';
+      default: return '';
+    }
+  }
+
+  function renderQuestions(filter) {
+    questionListEl.innerHTML = '';
+
+    let questions = (filter === 'all') ? getAllQuestions() : getQuestions(filter).map(q => ({...q, subject: filter}));
+
+    if (questions.length === 0) {
+      questionListEl.innerHTML = '<p>Chưa có câu hỏi nào.</p>';
+      return;
+    }
+
+    questions.forEach((q, index) => {
+      const div = document.createElement('div');
+      div.className = 'question-item';
+
+      div.innerHTML = `
+        <div class="subject-label">${subjectName(q.subject)}</div>
+        <div><strong>Câu hỏi ${index + 1}:</strong> ${q.text}</div>
+        <div class="answers">
+          <div class="answer">A: ${q.ansA} ${q.correctAns === 'A' ? '<span class="correct">(Đáp án đúng)</span>' : ''}</div>
+          <div class="answer">B: ${q.ansB} ${q.correctAns === 'B' ? '<span class="correct">(Đáp án đúng)</span>' : ''}</div>
+          <div class="answer">C: ${q.ansC} ${q.correctAns === 'C' ? '<span class="correct">(Đáp án đúng)</span>' : ''}</div>
+          <div class="answer">D: ${q.ansD} ${q.correctAns === 'D' ? '<span class="correct">(Đáp án đúng)</span>' : ''}</div>
+        </div>
+      `;
+
+      questionListEl.appendChild(div);
+    });
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const subject = document.getElementById('subject').value;
+    const text = questionText.value.trim();
+    const ansA = document.getElementById('ansA').value.trim();
+    const ansB = document.getElementById('ansB').value.trim();
+    const ansC = document.getElementById('ansC').value.trim();
+    const ansD = document.getElementById('ansD').value.trim();
+    const correctAns = document.getElementById('correctAns').value;
+
+    if (!subject || !text || !ansA || !ansB || !ansC || !ansD || !correctAns) {
+      alert('Vui lòng điền đầy đủ thông tin.');
+      return;
+    }
+
+    const questionObj = {
+      text,
+      ansA,
+      ansB,
+      ansC,
+      ansD,
+      correctAns
+    };
+
+    saveQuestion(subject, questionObj);
+
+    alert('Lưu câu hỏi thành công!');
+
+    form.reset();
+    renderQuestions(filterSubjectEl.value);
+  });
+
+  filterSubjectEl.addEventListener('change', () => {
+    renderQuestions(filterSubjectEl.value);
+  });
+
+  // Nhận dạng giọng nói phần tạo câu hỏi
+  if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+    startRecQuestionBtn.disabled = true;
+    startRecQuestionBtn.textContent = 'Trình duyệt không hỗ trợ nhận dạng giọng nói';
+  } else {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'vi-VN';  // Ngôn ngữ tiếng Việt
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    startRecQuestionBtn.addEventListener('click', () => {
+      recognition.start();
+      startRecQuestionBtn.textContent = 'Đang nghe... Nhấn để dừng';
+    });
+
+    recognition.addEventListener('result', (event) => {
+      const transcript = event.results[0][0].transcript;
+      questionText.value = transcript;
+      startRecQuestionBtn.textContent = '🎤 Ghi âm câu hỏi';
+    });
+
+    recognition.addEventListener('end', () => {
+      startRecQuestionBtn.textContent = '🎤 Ghi âm câu hỏi';
+    });
+
+    recognition.addEventListener('error', (event) => {
+      alert('Lỗi khi nhận dạng giọng nói: ' + event.error);
+      startRecQuestionBtn.textContent = '🎤 Ghi âm câu hỏi';
+    });
+  }
+
+  // Hiển thị danh sách câu hỏi lúc đầu
+  renderQuestions('all');
+</script>
+
+</body>
+</html>

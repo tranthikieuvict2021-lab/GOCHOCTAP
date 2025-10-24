@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Học Văn Thông Minh – Khối 11 (Chân Trời Sáng Tạo)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root{ --primary:#d63384; --accent:#8e005d; --bg:#fff8f0; --card:#fff; --muted:#6c757d; }
+    html,body{ height:100%; background:var(--bg); font-family: "Times New Roman", Times, serif; color:#222; }
+    .container-main{ max-width:1200px; margin:0 auto; }
+    .site-header{ background: linear-gradient(90deg, rgba(214,51,132,0.98), rgba(142,0,93,0.98)); color:white; padding:18px 0; margin-bottom:18px; }
+    .layout{ display:flex; gap:18px; align-items:flex-start; padding:0 12px; }
+    nav.left-nav{ width:260px; min-width:200px; max-height: calc(100vh - 160px); overflow:auto; border-radius:10px; background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.98)); box-shadow:0 6px 18px rgba(0,0,0,0.04); padding:12px; }
+    .content-area{ flex:1; min-width:0; }
+    .content-card{ background:var(--card); border-radius:12px; padding:16px; box-shadow: 0 8px 26px rgba(0,0,0,0.04); margin-bottom:18px; }
+    .video-wrap{ position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px; }
+    .video-wrap iframe{ position:absolute; top:0; left:0; width:100%; height:100%; border:0; border-radius:8px; }
+    .muted-small{ color:var(--muted); font-size:0.95rem; }
+    @media (max-width: 991.98px){ .layout{ flex-direction:column; } nav.left-nav{ width:100%; max-height:none; order:2;} .content-area{ order:1; } }
+    .mindmap { width:100%; height:280px; border-radius:8px; background:#fff; display:flex; align-items:center; justify-content:center; color:var(--muted); }
+    .quiz-card{ padding:12px; border-radius:10px; background:linear-gradient(180deg,#fff,#fffefe); box-shadow:0 8px 20px rgba(0,0,0,0.04); }
+    .choice-btn.active{ background:#f8d7da; }
+  </style>
+</head>
+<body>
+  <header class="site-header text-center">
+    <div class="container-main">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <a href="trangchinh.html" class="btn btn-sm btn-light">← Quay về trang chính</a>
+        <div style="padding:6px 10px;border-radius:999px;background:rgba(214,51,132,0.08);color:var(--primary);font-weight:600;">Học Văn • Khối 11</div>
+      </div>
+      <h1>Học Văn Thông Minh — Khối 11 (Chân Trời Sáng Tạo)</h1>
+      <p class="muted-small">Bạn đã chọn: làm toàn bộ Khối 11 — Mức độ: Đủ để học & ôn thi — Có video & trắc nghiệm</p>
+    </div>
+  </header>
+
+  <main class="container-main mb-5">
+    <div class="layout">
+      <nav class="left-nav" aria-label="Danh sách Khối 11">
+        <h6 style="color:var(--accent);font-weight:700;">Khối 11 — Chuyên đề</h6>
+        <div class="mb-2"><strong>Chuyên đề 1</strong><br>
+          <a class="d-block" href="#cd1-b1">Bài 1: Thông điệp từ thiên nhiên</a>
+          <a class="d-block" href="#cd1-b2">Bài 2: Hành trang vào tương lai</a>
+          <a class="d-block" href="#cd1-b3">Bài 3: Khát khao đoàn tụ</a>
+        </div>
+        <div class="mb-2"><strong>Chuyên đề 2</strong><br>
+          <a class="d-block" href="#cd2-b4">Bài 4: Nét đẹp văn hóa và cảnh quan</a>
+          <a class="d-block" href="#cd2-b5">Bài 5: Băn khoăn tìm lẽ sống</a>
+        </div>
+        <div class="mb-2"><strong>Chuyên đề 3</strong><br>
+          <a class="d-block" href="#cd3-b6">Bài 6: Sống với biển rừng bao la</a>
+          <a class="d-block" href="#cd3-b7">Bài 7: Những điều trông thấy</a>
+          <a class="d-block" href="#cd3-b8">Bài 8: Cái tôi — Thế giới độc đáo</a>
+          <a class="d-block" href="#cd3-b9">Bài 9: Những chân trời kí ức</a>
+        </div>
+        <div class="mt-3"><strong>Tài liệu</strong><br>
+          <a class="d-block" href="#decuong">Tải Đề cương HK1/HK2</a>
+          <a class="d-block" href="#sodotu">Sơ đồ tư duy (mẫu)</a>
+          <a class="d-block" href="#quiz-khoi11">Quiz Khối 11</a>
+        </div>
+      </nav>
+
+      <section class="content-area">
+        <!-- Chuyên đề 1 -->
+        <div class="content-card" id="cd1-b1">
+          <h3>📗 Bài 1: Thông điệp từ thiên nhiên (Tùy bút, tản văn)</h3>
+          <p class="muted-small">Các văn bản: <em>Ai đã đặt tên cho dòng sông</em>, <em>Cõi lá</em>, <em>Chiều xuân</em>; thực hành: Trăng sáng trên đầm sen; kỹ năng: thuyết trình & giới thiệu tác phẩm.</p>
+
+          <h5>Tóm tắt chung</h5>
+          <p>Tập trung khai thác mối quan hệ giữa con người và thiên nhiên: thiên nhiên là nguồn cảm hứng, là nơi phản chiếu tâm hồn, và chứa đựng thông điệp văn hóa, lịch sử. Các bài tùy bút/ tản văn thường dùng cảm xúc, miêu tả tinh tế để dẫn dắt suy ngẫm.</p>
+
+          <h5>Nội dung chính</h5>
+          <ul>
+            <li>Miêu tả cảnh vật và dẫn luận tới thông điệp văn hóa — ví dụ trong <em>Ai đã đặt tên cho dòng sông</em> là sự gắn kết giữa con người và dòng chảy lịch sử.</li>
+            <li>Thể hiện cảm xúc chủ quan nhưng có giá trị phổ quát.</li>
+          </ul>
+
+          <h5>Giá trị nghệ thuật</h5>
+          <ul>
+            <li>Ngôn ngữ giàu hình ảnh, giàu nhạc điệu.</li>
+            <li>Thủ pháp liên tưởng, so sánh, nhân hóa.</li>
+          </ul>
+
+          <h5>Ghi nhớ nhanh</h5>
+          <p><strong>Ý chính:</strong> Thiên nhiên là nguồn tư liệu và cảm hứng để thể hiện tư tưởng, tình cảm và bản sắc văn hóa.</p>
+
+          <h5>Đề cương ôn tập (ngắn)</h5>
+          <ol>
+            <li>Giới thiệu tác giả & tác phẩm (1-2 câu).</li>
+            <li>Tóm tắt nội dung (3-4 câu).</li>
+            <li>Phân tích chi tiết một vài hình ảnh tiêu biểu.</li>
+            <li>Kết luận: thông điệp & liên hệ.</li>
+          </ol>
+
+          <h5>Sơ đồ tư duy (mẫu)</h5>
+          <div class="mindmap">Sơ đồ tư duy: trung tâm "Thiên nhiên" → nhánh: Hình ảnh, Cảm xúc, Thông điệp, Nghệ thuật</div>
+
+          <h5>Bài tập (ví dụ)</h5>
+          <ol>
+            <li>Viết một đoạn văn (6–8 câu) giới thiệu một cảnh thiên nhiên bạn yêu thích và nêu thông điệp bạn rút ra.</li>
+            <li>Phân tích hình ảnh dòng sông trong <em>Ai đã đặt tên cho dòng sông</em> (khoảng 8–10 câu).</li>
+          </ol>
+
+          <div class="mt-3 video-wrap">
+            <iframe src="https://www.youtube.com/embed/QSIRGIKmzik" title="Ai đã đặt tên cho dòng sông - Hoàng Phủ Ngọc Tường" allowfullscreen></iframe>
+          </div>
+
+          <!-- Quiz for Bài 1 -->
+          <div class="mt-3 quiz-card" id="quiz-cd1-b1">
+            <h5>Quiz: Bài 1 — Thông điệp từ thiên nhiên (3 câu)</h5>
+            <div id="quiz-cd1-b1-area"></div>
+            <div class="mt-2 d-flex gap-2">
+              <button class="btn btn-sm btn-primary start-quiz" data-quiz="cd1-b1">Bắt đầu</button>
+              <button class="btn btn-sm btn-outline-secondary retry-quiz" data-quiz="cd1-b1" style="display:none;">Làm lại</button>
+              <div class="ms-auto"><small class="text-muted">Best: <span class="best-score" data-quiz="cd1-b1">--</span></small></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="content-card" id="cd1-b2">
+          <h3>📗 Bài 2: Hành trang vào tương lai (Văn bản nghị luận)</h3>
+          <p class="muted-small">Các văn bản: Một cây bút và một quyển sách..., Người trẻ và những hành trang..., Công nghệ AI...; thực hành: Hình tượng con người chinh phục thế giới (Ông già và biển cả)</p>
+
+          <h5>Tóm tắt & Nội dung chính</h5>
+          <p>Các bài nghị luận đề cập trách nhiệm tự học, kỹ năng thế kỷ XXI, ảnh hưởng của công nghệ (AI) tới đời sống và tư duy. Mục tiêu là rèn luyện khả năng lập luận, chứng minh, đánh giá.</p>
+
+          <h5>Giá trị nghệ thuật</h5>
+          <p>Nghị luận sử dụng luận cứ xác thực, dẫn chứng thuyết phục và kết cấu chặt chẽ; ngôn ngữ rõ ràng, chính xác.</p>
+
+          <h5>Đề cương ôn tập</h5>
+          <ol>
+            <li>Xác định vấn đề cần nghị luận.</li>
+            <li>Luận điểm chính (2–3 luận điểm phụ).</li>
+            <li>Luận cứ và dẫn chứng (sách, thực tiễn, ví dụ lịch sử).</li>
+            <li>Kết luận, nêu hướng giải pháp hoặc liên hệ.</li>
+          </ol>
+
+          <div class="mt-3 video-wrap">
+            <iframe src="https://www.youtube.com/embed/n2S0419kdw4" title="Nội dung: Ai đã đặt tên cho dòng sông - ôn tập" allowfullscreen></iframe>
+          </div>
+
+          <!-- Quiz for Bài 2 -->
+          <div class="mt-3 quiz-card" id="quiz-cd1-b2">
+            <h5>Quiz: Bài 2 — Hành trang vào tương lai (3 câu)</h5>
+            <div id="quiz-cd1-b2-area"></div>
+            <div class="mt-2 d-flex gap-2">
+              <button class="btn btn-sm btn-primary start-quiz" data-quiz="cd1-b2">Bắt đầu</button>
+              <button class="btn btn-sm btn-outline-secondary retry-quiz" data-quiz="cd1-b2" style="display:none;">Làm lại</button>
+              <div class="ms-auto"><small class="text-muted">Best: <span class="best-score" data-quiz="cd1-b2">--</span></small></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="content-card" id="cd1-b3">
+          <h3>📗 Bài 3: Khát khao đoàn tụ (Truyện thơ)</h3>
+          <p class="muted-small">Các văn bản: Lời tiễn dặn; Tú Uyên gặp Giáng Kiều; Người ngồi đợi trước hiên nhà; thực hành: Thị Kính nuôi con cho Thị Mầu</p>
+
+          <h5>Tóm tắt</h5>
+          <p>Những truyện thơ này khắc họa nỗi niềm mong nhớ, khát vọng sum họp giữa con người và gia đình/ quê hương; thường kết hợp yếu tố tự sự và trữ tình.</p>
+
+          <div class="mt-3 video-wrap">
+            <iframe src="https://www.youtube.com/embed/ILOnHZgHIO4" title="Hai đứa trẻ - ôn tập & minh họa" allowfullscreen></iframe>
+          </div>
+
+          <!-- Quiz for Bài 3 -->
+          <div class="mt-3 quiz-card" id="quiz-cd1-b3">
+            <h5>Quiz: Bài 3 — Khát khao đoàn tụ (3 câu)</h5>
+            <div id="quiz-cd1-b3-area"></div>
+            <div class="mt-2 d-flex gap-2">
+              <button class="btn btn-sm btn-primary start-quiz" data-quiz="cd1-b3">Bắt đầu</button>
+              <button class="btn btn-sm btn-outline-secondary retry-quiz" data-quiz="cd1-b3" style="display:none;">Làm lại</button>
+              <div class="ms-auto"><small class="text-muted">Best: <span class="best-score" data-quiz="cd1-b3">--</span></small></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Chuyên đề 2 -->
+        <div class="content-card" id="cd2-b4">
+          <h3>📘 Bài 4: Nét đẹp văn hóa và cảnh quan (Văn bản thông tin)</h3>
+          <p class="muted-small">Văn bản: Sơn Đoòng — thế giới chỉ có một; Đồ gốm gia dụng của người Việt; Chân quê; thực hành viết báo cáo nghiên cứu</p>
+
+          <div class="mt-3 video-wrap">
+            <iframe src="https://www.youtube.com/embed/KAqxxC49UeY" title="Ai đã đặt tên cho dòng sông - Bình giảng (Audio)" allowfullscreen></iframe>
+          </div>
+
+          <div class="mindmap">Sơ đồ tư duy: Trung tâm "Văn hóa & Cảnh quan" → nhánh: Đặc trưng, Giá trị, Bảo tồn</div>
+
+          <!-- Quiz for Bài 4 -->
+          <div class="mt-3 quiz-card" id="quiz-cd2-b4">
+            <h5>Quiz: Bài 4 — Văn hóa & Cảnh quan (3 câu)</h5>
+            <div id="quiz-cd2-b4-area"></div>
+            <div class="mt-2 d-flex gap-2">
+              <button class="btn btn-sm btn-primary start-quiz" data-quiz="cd2-b4">Bắt đầu</button>
+              <button class="btn btn-sm btn-outline-secondary retry-quiz" data-quiz="cd2-b4" style="display:none;">Làm lại</button>
+              <div class="ms-auto"><small class="text-muted">Best: <span class="best-score" data-quiz="cd2-b4">--</span></small></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="content-card" id="cd2-b5">
+          <h3>📘 Bài 5: Băn khoăn tìm lẽ sống (Bi kịch)</h3>
+          <p class="muted-small">Văn bản: Vĩnh biệt Cửu Trùng Đài; Sống hay không sống — Đó là vấn đề; Chí khí anh hùng; thực hành: Âm mưu và tình yêu</p>
+
+          <div class="mt-3 video-wrap">
+            <iframe src="https://www.youtube.com/embed/d5PYEeCFbSY" title="Vĩnh biệt Cửu Trùng Đài - phân tích" allowfullscreen></iframe>
+          </div>
+
+          <!-- Quiz for Bài 5 -->
+          <div class="mt-3 quiz-card" id="quiz-cd2-b5">
+            <h5>Quiz: Bài 5 — Bi kịch & Lẽ sống (3 câu)</h5>
+            <div id="quiz-cd2-b5-area"></div>
+            <div class="mt-2 d-flex gap-2">
+              <button class="btn btn-sm btn-primary start-quiz" data-quiz="cd2-b5">Bắt đầu</button>
+              <button class="btn btn-sm btn-outline-secondary retry-quiz" data-quiz="cd2-b5" style="display:none;">Làm lại</button>
+              <div class="ms-auto"><small class="text-muted">Best: <span class="best-score" data-quiz="cd2-b5">--</span></small></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Chuyên đề 3 -->
+        <div class="content-card" id="cd3-b6">
+          <h3>📙 Bài 6: Sống với biển rừng bao la (Truyện ngắn)</h3>
+          <p class="muted-small">Tác phẩm/đoạn: Chiều sương; Muối của rừng; Tảo phát Bạch Đế thành; thực hành: Kiến và người</p>
+
+          <div class="mt-3 video-wrap">
+            <iframe src="https://www.youtube.com/embed/Wr9OECAsx9g" title="Chữ người tử tù - diễn đọc & phân tích" allowfullscreen></iframe>
+          </div>
+
+          <div class="mt-3 quiz-card" id="quiz-cd3-b6">
+            <h5>Quiz: Bài 6 — Sống với biển rừng (3 câu)</h5>
+            <div id="quiz-cd3-b6-area"></div>
+            <div class="mt-2 d-flex gap-2">
+              <button class="btn btn-sm btn-primary start-quiz" data-quiz="cd3-b6">Bắt đầu</button>
+              <button class="btn btn-sm btn-outline-secondary retry-quiz" data-quiz="cd3-b6" style="display:none;">Làm lại</button>
+              <div class="ms-auto"><small class="text-muted">Best: <span class="best-score" data-quiz="cd3-b6">--</span></small></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="content-card" id="cd3-b7">
+          <h3>📙 Bài 7: Những điều trông thấy</h3>
+          <p class="muted-small">Văn bản: Trao duyên; Độc “Tiểu thanh kí”; Kính gửi cụ Nguyễn Du; thực hành: Thúy Kiều hầu rượu Hoạn Thư — Thúc Sinh</p>
+
+          <div class="mt-3 quiz-card" id="quiz-cd3-b7">
+            <h5>Quiz: Bài 7 — Những điều trông thấy (3 câu)</h5>
+            <div id="quiz-cd3-b7-area"></div>
+            <div class="mt-2 d-flex gap-2">
+              <button class="btn btn-sm btn-primary start-quiz" data-quiz="cd3-b7">Bắt đầu</button>
+              <button class="btn btn-sm btn-outline-secondary retry-quiz" data-quiz="cd3-b7" style="display:none;">Làm lại</button>
+              <div class="ms-auto"><small class="text-muted">Best: <span class="best-score" data-quiz="cd3-b7">--</span></small></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="content-card" id="cd3-b8">
+          <h3>📙 Bài 8: Cái tôi — Thế giới độc đáo</h3>
+          <p class="muted-small">Văn bản: Nguyệt cầm; Thời gian; Edvard Munch và tiếng thét; thực hành: Gai</p>
+
+          <div class="mt-3 quiz-card" id="quiz-cd3-b8">
+            <h5>Quiz: Bài 8 — Cái tôi (3 câu)</h5>
+            <div id="quiz-cd3-b8-area"></div>
+            <div class="mt-2 d-flex gap-2">
+              <button class="btn btn-sm btn-primary start-quiz" data-quiz="cd3-b8">Bắt đầu</button>
+              <button class="btn btn-sm btn-outline-secondary retry-quiz" data-quiz="cd3-b8" style="display:none;">Làm lại</button>
+              <div class="ms-auto"><small class="text-muted">Best: <span class="best-score" data-quiz="cd3-b8">--</span></small></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="content-card" id="cd3-b9">
+          <h3>📙 Bài 9: Những chân trời kí ức (truyện - truyện kí)</h3>
+          <p class="muted-small">Văn bản: Ngôi nhà tranh của cụ Phan Bội Châu ở Bến Ngự; Tôi đã học tập như thế nào?; Nhớ con sông quê hương; thực hành thuyết minh</p>
+
+          <div class="mt-3 quiz-card" id="quiz-cd3-b9">
+            <h5>Quiz: Bài 9 — Những chân trời kí ức (3 câu)</h5>
+            <div id="quiz-cd3-b9-area"></div>
+            <div class="mt-2 d-flex gap-2">
+              <button class="btn btn-sm btn-primary start-quiz" data-quiz="cd3-b9">Bắt đầu</button>
+              <button class="btn btn-sm btn-outline-secondary retry-quiz" data-quiz="cd3-b9" style="display:none;">Làm lại</button>
+              <div class="ms-auto"><small class="text-muted">Best: <span class="best-score" data-quiz="cd3-b9">--</span></small></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Đề cương và Sơ đồ tư duy -->
+        <div class="content-card" id="decuong">
+          <h3>🗂️ Đề cương ôn tập — Khối 11</h3>
+          <p class="muted-small">Tóm tắt đề cương HK1 & HK2. (Nút xuất PDF sẽ tạo file đề cương chi tiết).</p>
+          <div class="mt-2">
+            <button class="btn btn-sm btn-outline-success" id="download-decuong">Tải đề cương (PDF) — chuẩn bị</button>
+          </div>
+        </div>
+
+        <div class="content-card" id="sodotu">
+          <h3>🧠 Sơ đồ tư duy (mẫu)</h3>
+          <p class="muted-small">Mình sẽ tạo sơ đồ tư duy SVG cho từng bài; hiện tại là mẫu dùng chung (bạn có thể yêu cầu file PNG/PDF).</p>
+          <div class="mindmap">[Sơ đồ tư duy mẫu — sẽ tạo SVG chi tiết cho mỗi bài]</div>
+        </div>
+
+        <!-- Quiz Khối 11 overview -->
+        <div class="content-card" id="quiz-khoi11">
+          <h3>📝 Quiz nhanh — Khối 11 (tổng quan)</h3>
+          <p class="muted-small">Bộ trắc nghiệm 10 câu để kiểm tra tổng quan Khối 11.</p>
+          <div class="quiz-card" id="quiz11-card">
+            <div id="quiz11-area"></div>
+            <div class="mt-3 d-flex gap-2">
+              <button id="start-quiz11" class="btn btn-sm btn-primary">Bắt đầu Quiz 10 câu</button>
+              <button id="retry-quiz11" class="btn btn-sm btn-outline-secondary" style="display:none;">Làm lại</button>
+              <div class="ms-auto"><small class="text-muted">Best: <span id="quiz11-best">--</span></small></div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <footer class="text-center py-3">© Góc Học Tập — Khối 11 • Chân Trời Sáng Tạo</footer>
+
+  <script>
+    // --- Per-lesson quiz data (sample questions) ---
+    const lessonQuizzes = {
+      'cd1-b1': [
+        {q:'Tác giả của "Ai đã đặt tên cho dòng sông" là ai?', choices:['Hoàng Phủ Ngọc Tường','Nguyễn Tuân','Thạch Lam','Tố Hữu'], a:0, explain:'Hoàng Phủ Ngọc Tường là tác giả bài bút kí.'},
+        {q:'Trong các bài tùy bút, yếu tố nào thường được nhấn mạnh?', choices:['Luận cứ','Cảm xúc và liên tưởng','Số liệu','Lập luận chặt chẽ'], a:1},
+        {q:'Thông điệp chính của các bài thiên nhiên thường là?', choices:['Văn hóa, ký ức và bản sắc','Kể chuyện phiêu lưu','Phê phán chính trị','Giải thích khoa học'], a:0}
+      ],
+      'cd1-b2': [
+        {q:'Một cây bút và một quyển sách có thể thay đổi điều gì?', choices:['Thời tiết','Tư duy và tri thức','Thu nhập','Sức khỏe'], a:1},
+        {q:'Khi viết văn bản nghị luận cần gì?', choices:['Luận điểm rõ ràng','Nhiều hình ảnh','Nhạc điệu','Kịch tính'], a:0},
+        {q:'AI có thể ảnh hưởng đến?', choices:['Nghề nghiệp và tư duy','Chỉ thời tiết','Chỉ vui chơi','Không gì cả'], a:0}
+      ],
+      'cd1-b3': [
+        {q:'Thể loại "truyện thơ" kết hợp những yếu tố nào?', choices:['Tự sự và trữ tình','Lập luận và số liệu','Miêu tả và báo cáo','Kịch và thơ'], a:0},
+        {q:'Chủ đề chính của bài 3 là?', choices:['Khát khao đoàn tụ','Khoa học','Thương mại','Chính trị'], a:0},
+        {q:'Một đặc điểm nghệ thuật của truyện thơ là?', choices:['Sử dụng ngôn ngữ giàu hình ảnh','Dùng nhiều số liệu','Lập luận chặt chẽ','Dùng ngôn ngữ chuyên ngành'], a:0}
+      ],
+      'cd2-b4': [
+        {q:'Sơn Đoòng được biết đến như thế nào?', choices:['Hang động lớn nhất thế giới','Một con sông','Một ngọn núi','Một thành phố'], a:0},
+        {q:'Văn bản thông tin cần đảm bảo?', choices:['Chính xác và mạch lạc','Cảm xúc cá nhân','Tính nghị luận','Kể chuyện dài'], a:0},
+        {q:'Mục đích của bài viết về văn hóa là?', choices:['Giới thiệu và kêu gọi bảo tồn','Kể chuyện cá nhân','Phê phán cá nhân','Giải trí thuần túy'], a:0}
+      ],
+      'cd2-b5': [
+        {q:'Thể loại của "Vĩnh biệt Cửu Trùng Đài" là?', choices:['Kịch','Thơ','Tạp văn','Truyện ngắn'], a:0},
+        {q:'Bi kịch trong văn học thường nhấn mạnh?', choices:['Xung đột sâu sắc và hậu quả','Những bữa tiệc','Những sáng kiến công nghệ','Sự hài hước'], a:0},
+        {q:'Nghệ thuật thường thấy trong bi kịch là?', choices:['Tình huống kịch tính và đối thoại mạnh','Miêu tả thiên nhiên','Lập luận khoa học','Thể thao'], a:0}
+      ],
+      'cd3-b6': [
+        {q:'Chủ đề chính của các truyện trong bài 6 là?', choices:['Con người và thiên nhiên','Kinh tế','Lập trình','Ẩm thực'], a:0},
+        {q:'Nhân vật trong truyện ngắn thường thể hiện?', choices:['Phẩm chất nhân văn dưới thử thách','Thông tin kỹ thuật','Hài kịch','Giải trí'], a:0},
+        {q:'Khi phân tích truyện, điều cần chú ý?', choices:['Cốt truyện, nhân vật, không gian','Chỉ tóm tắt','Chỉ đưa ý kiến cá nhân','Chỉ mô tả hình thức bìa sách'], a:0}
+      ],
+      'cd3-b7': [
+        {q:'"Trao duyên" thuộc thể loại?', choices:['Truyện ngắn','Thơ','Thơ lục bát','Kịch'], a:1},
+        {q:'Khi đọc văn bản truyền thống cần?', choices:['Hiểu chú giải và ngôn ngữ cổ','Bỏ qua ngôn ngữ','Chỉ nhìn hình ảnh','Chỉ đọc tiêu đề'], a:0},
+        {q:'Mục tiêu của bài 7 là?', choices:['Rèn kỹ năng đọc hiểu văn bản cổ','Viết công thức','Học tiếng nước ngoài','Luyện vẽ tranh'], a:0}
+      ],
+      'cd3-b8': [
+        {q:'"Cái tôi" trong văn học ám chỉ?', choices:['Cảm xúc và quan điểm cá nhân','Một thể loại văn học','Một nhân vật lịch sử','Một bài toán'], a:0},
+        {q:'Edvard Munch nổi tiếng với tác phẩm nào?', choices:['Tiếng thét (The Scream)','Đêm đầy sao','Sự ra đời của Venus','Sống động'], a:0},
+        {q:'Nghệ thuật hiện đại thường chú trọng?', choices:['Cảm xúc cá nhân và biểu đạt','Chỉ kể chuyện','Chỉ số liệu','Chỉ nghị luận'], a:0}
+      ],
+      'cd3-b9': [
+        {q:'"Nhớ con sông quê hương" là dạng văn bản gì?', choices:['Tùy bút/Truyện ký','Báo cáo khoa học','Bảng kê toán','Thư mời'], a:0},
+        {q:'Ký ức trong văn học giúp gì?', choices:['Giữ gìn giá trị lịch sử và truyền thống','Làm bài tập toán','Tạo bản đồ','Không quan trọng'], a:0},
+        {q:'Mục tiêu của phần thuyết minh trong bài 9 là?', choices:['Giới thiệu đối tượng một cách rõ ràng và thuyết phục','Gây cười','Viết truyện giả tưởng','Tạo trò chơi'], a:0}
+      ]
+    };
+
+    // --- Generic quiz renderer for lessons ---
+    function renderLessonQuiz(key){ const area = document.getElementById('quiz-'+key+'-area') || document.getElementById('quiz-'+key+'-area'); }
+
+    function startLessonQuiz(key){ const data = lessonQuizzes[key]; const area = document.getElementById(key+'-area') || document.getElementById('quiz-'+key+'-area') || document.getElementById('quiz-'+key+'-area');
+      // For simplicity, render one question at a time
+      let state={index:0, answers:[]};
+      function renderQ(i){ const q=data[i]; let html=`<div><div class="mb-2"><strong>Câu ${i+1} / ${data.length}</strong></div><div style="font-weight:600;">${q.q}</div><div class="mt-2">`;
+        q.choices.forEach((c,idx)=> html+=`<div class="mb-2"><button class="btn btn-outline-secondary w-100 choice-btn" data-idx="${idx}">${String.fromCharCode(65+idx)}. ${c}</button></div>`);
+        html+=`</div><div class="d-flex gap-2 mt-2"><button id="prev" class="btn btn-sm btn-outline-secondary" ${i===0?'disabled':''}>Quay lại</button><button id="next" class="btn btn-sm btn-primary" ${state.answers[i]===undefined?'disabled':''}>Tiếp</button><div class="ms-auto text-muted">Đã trả lời: ${state.answers.filter(a=>a!==undefined).length}/${data.length}</div></div>`;
+        area.innerHTML = html;
+        area.querySelectorAll('.choice-btn').forEach(b=> b.addEventListener('click', function(){ const idx=Number(this.dataset.idx); area.querySelectorAll('.choice-btn').forEach(x=>x.classList.remove('active')); this.classList.add('active'); state.answers[i]=idx; document.getElementById('next').disabled=false; }));
+        document.getElementById('prev').addEventListener('click', ()=>{ if(i>0){ state.index=i-1; renderQ(state.index); } });
+        document.getElementById('next').addEventListener('click', ()=>{ if(i<data.length-1){ state.index=i+1; renderQ(state.index); } else finish(); });
+      }
+      function finish(){ let correct=0; const results=data.map((q,idx)=>{ const ch=state.answers[idx]; const ok= ch===q.a; if(ok) correct++; return {q,chosen:ch,ok}; }); const pct=Math.round(correct/data.length*100); area.innerHTML = `<div class="text-center mb-2"><h5>Kết quả: ${correct}/${data.length} — ${pct}%</h5></div>` + results.map((r,i)=>`<div class="mb-2 p-2" style="border-radius:8px;background:#fff;"><div style="font-weight:600;">${i+1}. ${r.q.q||r.q}</div><div>Đáp án bạn chọn: ${r.chosen===undefined?'<em>Không trả lời</em>':r.q.choices[r.chosen]}</div><div>Đáp án đúng: <strong>${r.q.choices[r.q.a]}</strong></div><div class="text-muted small mt-1">${r.q.explain||''}</div></div>`).join('');
+        // store best
+        const keyBest = key + '_best'; const prev=Number(localStorage.getItem(keyBest)||-1); if(pct>prev) localStorage.setItem(keyBest,pct); const bestEls = document.querySelectorAll('.best-score[data-quiz="'+key+'"]'); bestEls.forEach(el=> el.textContent = (localStorage.getItem(keyBest)? localStorage.getItem(keyBest)+'%':'--')); document.querySelectorAll('.retry-quiz[data-quiz="'+key+'"]')[0].style.display='inline-block';
+      }
+      // initial
+      renderQ(0);
+    }
+
+    // Attach start/retry handlers
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.querySelectorAll('.start-quiz').forEach(btn=> btn.addEventListener('click', ()=>{ const key=btn.dataset.quiz; const area = document.getElementById(key+'-area'); startLessonQuiz(key); btn.style.display='none'; }));
+      document.querySelectorAll('.retry-quiz').forEach(btn=> btn.addEventListener('click', ()=>{ const key=btn.dataset.quiz; const startBtn = document.querySelector('.start-quiz[data-quiz="'+key+'"]'); if(startBtn) startBtn.style.display='inline-block'; document.getElementById(key+'-area').innerHTML=''; btn.style.display='none'; }));
+
+      // Quiz11 (overview) - kept from before
+      // ... simplified sample quiz11 (10 Q)
+      const quiz11Data = [
+        {q:'Ai là tác giả "Ai đã đặt tên cho dòng sông"?', choices:['Hoàng Phủ Ngọc Tường','Nguyễn Tuân','Thạch Lam','Tố Hữu'], a:0},
+        {q:'Thể loại của "Truyện thơ" là?', choices:['Truyện ngắn','Truyện thơ','Tùy bút','Kịch'], a:1},
+        {q:'Chủ đề "Hành trang vào tương lai" liên quan đến?', choices:['Tình yêu','Tri thức và kỹ năng','Ẩm thực','Du lịch'], a:1},
+        {q:'"Vĩnh biệt Cửu Trùng Đài" là thể loại?', choices:['Kịch','Thơ','Truyện','Tùy bút'], a:0},
+        {q:'"Ngôi nhà tranh của cụ Phan Bội Châu" là?', choices:['Tự sự','Truyện ký','Thơ','Kịch'], a:1},
+        {q:'Yếu tố quan trọng khi phân tích thơ?', choices:['Hình ảnh','Số liệu','Luận cứ','Biểu đồ'], a:0},
+        {q:'"Cái tôi" trong văn học là?', choices:['Cảm xúc cá nhân','Một thể loại','Một nhân vật','Một đồ vật'], a:0},
+        {q:'Đề cương ôn tập tốt nên có?', choices:['Ý chính và dẫn chứng','Có nhiều hình ảnh','Chỉ tóm tắt','Không cần'], a:0},
+        {q:'Sơ đồ tư duy giúp?', choices:['Ghi nhớ hệ thống ý','Thay thế sách','Làm đẹp','Làm bài tập khác'], a:0},
+        {q:'Mục tiêu thuyết minh là?', choices:['Trình bày thông tin chính xác','Làm thơ','Viết truyện','Giải toán'], a:0}
+      ];
+      let state11={index:0, answers:[]};
+      function render11Q(i){ const q=quiz11Data[i]; const area= document.getElementById('quiz11-area'); let html=`<div><div class="mb-2"><strong>Câu ${i+1}/${quiz11Data.length}</strong></div><div style="font-weight:600;">${q.q}</div><div class="mt-2">`;
+        q.choices.forEach((c,idx)=> html+=`<div class="mb-2"><button class="btn btn-outline-secondary w-100 choice11" data-idx="${idx}">${String.fromCharCode(65+idx)}. ${c}</button></div>`);
+        html += `</div><div class="d-flex gap-2 mt-2"><button id="prev11" class="btn btn-sm btn-outline-secondary" ${i===0?'disabled':''}>Quay lại</button><button id="next11" class="btn btn-sm btn-primary" ${state11.answers[i]===undefined?'disabled':''}>Tiếp</button><div class="ms-auto text-muted">Đã trả lời: ${state11.answers.filter(a=>a!==undefined).length}/${quiz11Data.length}</div></div>`;
+        document.getElementById('quiz11-area').innerHTML = html;
+        document.querySelectorAll('.choice11').forEach(b=> b.addEventListener('click', function(){ const idx=Number(this.dataset.idx); document.querySelectorAll('.choice11').forEach(x=>x.classList.remove('active')); this.classList.add('active'); state11.answers[i]=idx; document.getElementById('next11').disabled=false; }));
+        document.getElementById('prev11').addEventListener('click', ()=>{ if(i>0){ state11.index=i-1; render11Q(state11.index);} });
+        document.getElementById('next11').addEventListener('click', ()=>{ if(i<quiz11Data.length-1){ state11.index=i+1; render11Q(state11.index);} else { finish11(); } });
+      }
+      function finish11(){ let correct=0; const res=quiz11Data.map((q,idx)=>{ const ch=state11.answers[idx]; const ok= ch===q.a; if(ok) correct++; return {q,chosen:ch,ok}; }); const pct=Math.round(correct/quiz11Data.length*100); let list=''; res.forEach((r,i)=>{ const chosen=r.chosen===undefined?'<em>Không trả lời</em>':quiz11Data[i].choices[r.chosen]; const correctText=quiz11Data[i].choices[quiz11Data[i].a]; list+=`<div class="mb-3 p-2" style="border-radius:8px;background:#fff;"><div style="font-weight:600;">${i+1}. ${quiz11Data[i].q}</div><div class="mt-1">Bạn chọn: ${chosen}</div><div>Đáp án: <strong>${correctText}</strong></div></div>`; }); document.getElementById('quiz11-area').innerHTML = `<div class="text-center mb-3"><h4>Kết quả: ${correct}/${quiz11Data.length} — ${pct}%</h4></div>${list}`; document.getElementById('retry-quiz11').style.display='inline-block'; document.getElementById('quiz11-best').textContent = localStorage.getItem('quiz11_best')?localStorage.getItem('quiz11_best')+'%':'--'; localStorage.setItem('quiz11_best', localStorage.getItem('quiz11_best')||pct);
+      }
+      document.getElementById('start-quiz11').addEventListener('click', ()=>{ state11.index=0; state11.answers=[]; render11Q(0); document.getElementById('start-quiz11').style.display='none'; });
+      document.getElementById('retry-quiz11').addEventListener('click', ()=>{ state11={index:0,answers:[]}; renderQuiz11Start(); document.getElementById('start-quiz11').style.display='inline-block'; });
+      function renderQuiz11Start(){ document.getElementById('quiz11-area').innerHTML = '<div class="py-3"><p class="mb-1"><strong>Quiz Khối 11 — 10 câu</strong></p><p class="muted-small mb-0">Kiểm tra nhanh kiến thức chương trình.</p></div>'; }
+      renderQuiz11Start();
+
+      // Smooth scroll nav
+      document.querySelectorAll('nav.left-nav a').forEach(a=>{ a.addEventListener('click', function(e){ const href=this.getAttribute('href'); if(href && href.startsWith('#')){ e.preventDefault(); const t=document.querySelector(href); if(t) t.scrollIntoView({behavior:'smooth',block:'start'}); } }); });
+
+    });
+  </script>
+</body>
+</html>
